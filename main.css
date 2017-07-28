@@ -1,0 +1,54 @@
+body {
+	background-color: #d9edf7;
+}
+
+.section {
+	margin: 20px;
+}
+
+.section-title {
+	color:white;
+	background-color: #235580;
+	border-color: #235580;
+	text-align: center;
+	padding: 10px 15px;
+	border-radius: 3px;
+}
+
+.section-title > a, 
+.section-title a:link,
+.section-title a:hover, 
+.section-title a:visited,
+.section-title a:active {
+	color: white !important;
+	text-decoration: none !important;
+}
+
+.section--panel {
+	margin: 0 20px;
+}
+
+.section--panel ~ .section--panel {
+	margin-top: 20px;
+}
+
+.section--panel-heading {
+	font-size: 20px;
+	text-align: center;
+}
+
+.section--panel-body {}
+
+.section-desc {}
+
+.types-list {}
+
+.types-list-title {}
+
+.types-list-content--bullet {
+	list-style-type: bullet;
+}
+
+.types-list-content--no-bullet {
+	list-style-type: none;
+}
