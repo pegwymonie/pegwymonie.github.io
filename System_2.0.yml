@@ -289,7 +289,6 @@ System:
             Bonus:
               Restrain: Increase the targets restrain value by 2.
               2E: Increase
-
       Move:
         Description: Move around the battle field
         SubActions:
@@ -367,3 +366,15 @@ System:
             Bonus:
               2+: You lift the object to shoulder height
               4+: You lift the object above your head
+      Steal:
+        Description: Steal an item from your target
+        Action Cost: 1
+        Difficulty: 4
+        PositiveFactors:
+          - Physical
+          - Dexterity
+        NegativeFactora:
+          - Targets(Perception)
+        OnSuccess: On Success: Choose a visible, non held item. You gain possession of that item. You must have a free hand, or drop your current item.
+        4E: You may steal an aditional item.
+        Fient: You may steal a small held item.
