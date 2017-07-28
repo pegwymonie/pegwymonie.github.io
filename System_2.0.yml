@@ -332,7 +332,7 @@ System:
               - Physical
               - Strength
             NegativeFactors:
-              #- Burden
+              - Burden
             OnSuccess: You may move up to one forth your speed.
             OnFailure: You fall distance equal to the degree of failure
             Bonus:

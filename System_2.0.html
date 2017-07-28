@@ -49,7 +49,7 @@
     <H3>Notations</H3>
     <ul style="list-style-type:bullet">
       {{#each Notations}}
-      <li> {{@key}} {{#ifString .}} : {{this}} {{/ifString}}</li>
+      <li> {{@key}} {{#ifString .}}: {{this}} {{/ifString}}</li>
       <ul style="list-style-type:bullet">
         {{#each .}}
         <li> {{@key}} : {{this}}</li>
@@ -72,7 +72,20 @@
             {{@key}}
             <ul style="list-style-type:none">
               {{#each .}}
-              <li>{{@key}} : {{this}}</li>
+              <li>{{@key}} {{#ifArray .}}
+                <ul>{{#each .}}
+                  <li>{{this}}</li>
+                  {{/each}}
+                </ul>
+                {{else}}{{#ifObject .}}{{else}}: {{this}} {{/ifObject}}{{/ifArray}}
+              </li>
+              {{#ifObject .}}
+              <ul style="list-style-type:none">
+                {{#each .}}
+                <li>{{@key}}: {{this}}</li>
+                {{/each}}
+              </ul>
+              {{/ifObject}}
               {{/each}}
             </ul>
           </li>
