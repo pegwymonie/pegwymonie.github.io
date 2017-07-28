@@ -4,28 +4,85 @@
 <script src="./System_2.0.js"></script>
 
 <script id="template" type="text/x-handlebars-template">
-  <div><H1>Character</H1>
+  <div>
+    <H1>Characters</H1>
     {{#each Characters}}
-      <H2>{{@key}}</H2>
-      <p>{{Description}}</p>
-      <H3>Types</H3>
+    <H2>{{@key}}</H2>
+    <p>{{Description}}</p>
+    <H3>Types</H3>
+    <ul>
+      {{#each Types}}
+      <li> {{@key}}</li>
+      {{#ifArray .}}
+      <ul style="list-style-type:bullet">
+        {{#each .}}
+        <li> {{this}}</li>
+        {{/each}}
+        {{else}}
+        <ul style="list-style-type:none">
+          {{#each .}}
+          <li> {{@key}} : {{this}}</li>
+          {{/each}}
+        </ul>
+        {{/ifArray}}
+      </ul>
+      {{/each}}
+    </ul>
+    {{/each}}
+  </div>
+  <div>
+    <H1>System</H1>
+    {{#each System}}
+    <H2>{{@key}}</H2>
+    <p>{{Description}}</p>
+    <H3>Types</H3>
+    <ul>
+      {{#each Types}}
+      <li> {{@key}}</li>
       <ul>
         {{#each Types}}
-          <li> {{@key}} </li>
-            {{#ifArray .}}
-            <ul style="list-style-type:bullet">
-              {{#each .}}
-                <li> {{this}} </li>
-              {{/each}}
-            {{else}}
-            <ul style="list-style-type:none">
-              {{#each .}}
-              <li> {{@key}} : {{this}}</li>
-              {{/each}}
-            {{/ifArray}}
-          </ul>
+        <li> {{this}}</li>
         {{/each}}
       </ul>
+      {{/each}}
+    </ul>
+    <H3>Notations</H3>
+    <ul style="list-style-type:bullet">
+      {{#each Notations}}
+      <li> {{@key}} {{#ifString .}} : {{this}} {{/ifString}}</li>
+      <ul style="list-style-type:bullet">
+        {{#each .}}
+        <li> {{@key}} : {{this}}</li>
+        {{/each}}
+      </ul>
+      {{/each}}
+    </ul>
+    <H3>Descriptions</H3>
+    <ul style="list-style-type:bullet">
+      {{#each Descriptions}}
+      <li>{{@key}}</li>
+      <ul style="list-style-type:bullet">
+        {{#each .}}
+        {{#ifString .}}
+        <li>{{this}}</li>
+        {{else}}
+        <ul style="list-style-type:none">
+          {{#each .}}
+          <li>
+            {{@key}}
+            <ul style="list-style-type:none">
+              {{#each .}}
+              <li>{{@key}} : {{this}}</li>
+              {{/each}}
+            </ul>
+          </li>
+          {{/each}}
+        </ul>
+        {{/ifString}}
+        {{/each}}
+      </ul>
+      {{/each}}
+    </ul>
     {{/each}}
   </div>
 </script>
