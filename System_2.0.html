@@ -1,0 +1,33 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+
+<script src="./System_2.0.js"></script>
+
+<script id="template" type="text/x-handlebars-template">
+  <div><H1>Character</H1>
+    {{#each Characters}}
+      <H2>{{@key}}<H2>
+      <p>{{Description}}</p>
+      <H3>Types</H3>
+      <ul>
+        {{#each Types}}
+          <li> {{@key}} </li>
+            {{#ifArray .}}
+            <ul style="list-style-type:bullet">
+              {{#each .}}
+                <li> {{this}} </li>
+              {{/each}}
+            {{else}}
+            <ul style="list-style-type:none">
+              {{#each .}}
+              <li> {{@key}} : {{this}}</li>
+              {{/each}}
+            {{/ifArray}}
+          </ul>
+        {{/each}}
+      </ul>
+    {{/each}}
+  </div>
+</script>
+
+<div id="target"></div>
