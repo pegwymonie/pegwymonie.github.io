@@ -1,11 +1,4 @@
 
-Social Actions:
-	Direct Attack: (Argument, In the presence of)
-		(+Social, +Presence) -> OnSuccess: Deal Weapon Damage to defender’s Standing. See specific weapon for further information.
-	Indirect Attack: (Rumors, Target not present)
-		(+Social, +Manipulation) -> OnSuccess: Deal Weapon Damage to defender’s Standing. See specific weapon for further information.
-	Social Combat Maneuver:
-		(+Social, +Presence, -Defenders(Willpower)) -> On Success: Dm’s Discretion (This is a catch all, see below for specific maneuvers)
 Mental Actions:
 	First Aid[2]:
 		(Mental, Intelligence) ->

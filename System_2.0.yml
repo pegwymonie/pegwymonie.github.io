@@ -448,3 +448,55 @@ System:
         OnSuccess: Reduce your restrain value. If your value is zero, or lower, you are no longer restrained.
         Bonus:
           2E: Reduce your restrain value.
+      Social Attack:
+        Description: Attack someones public standing.
+        Special: Social attacks can only be used in social combat.
+        SubActions:
+          Cast Aspertions:
+            Description: Attack the standing of an individual.
+            Action Cost: 1
+            Difficulty: 6
+            PostivieFactors:
+              - Social
+              - Presence
+            OnSuccess: Deal one point of damage to a targets standing.
+            Bonus:
+              2E: Deal one point of damage to a targets standing.
+          Smear:
+            Description: Lie to attack the standing of an individual.
+            Action Cost: 1
+            Difficulty: 4
+            PostivieFactors:
+              - Social
+              - Presence
+            NegativeFactors:
+              - Target(Standing)
+            OnSuccess: Deal one point of damage to a targets standing.
+            OnFailure: Take two point of damage to your standing.
+            Bonus:
+              2E: Deal one point of damage to a targets standing.
+          Discredit:
+            Description: Reveal harmful information about a target
+            Action Cost: 1
+            Difficulty: 4
+            Special: Requires an unused peice of damaging information
+            PostivieFactors:
+              - Social
+              - Presence
+              - Target(Standing)
+            OnSuccess: Deal two point of damage to a targets standing.
+            Bonus:
+              2E: Deal one point of damage to a targets standing.
+          Spread Rummors:
+            Description: Reveal harmful information about a target
+            Action Cost: 1
+            Difficulty: 4
+            Special: Does not require an active social combat. May only be used once per week per target.
+            PostivieFactors:
+              - Social
+              - Presence
+            OnSuccess: Deal one point of damage to a targets standing. You take two point of damage to your standing.
+            Bonus:
+              4E: Deal one point of damage to a targets standing.
+
+
