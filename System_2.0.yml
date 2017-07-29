@@ -353,7 +353,7 @@ System:
             On Success: You move item one forth your movement.
           Lift Heavy Object:
             Description: You lift an object off the ground
-            Acion Cost: 2
+            Action Cost: 2
             Difficulty: Based on object weight
             NoRoll: If difficulty is zero, you lift the item to your waist.
             PositiveFactors:
@@ -373,7 +373,7 @@ System:
         PositiveFactors:
           - Physical
           - Dexterity
-        NegativeFactora:
+        NegativeFactors:
           - Targets(Perception)
         OnSuccess: Choose a visible, non held item. You gain possession of that item. You must have a free hand, or drop your current item.
         Bonus:
