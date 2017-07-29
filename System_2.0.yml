@@ -375,6 +375,7 @@ System:
           - Dexterity
         NegativeFactora:
           - Targets(Perception)
-        OnSuccess: On Success: Choose a visible, non held item. You gain possession of that item. You must have a free hand, or drop your current item.
-        4E: You may steal an aditional item.
-        Fient: You may steal a small held item.
+        OnSuccess: Choose a visible, non held item. You gain possession of that item. You must have a free hand, or drop your current item.
+        Bonus:
+          4E: You may steal an aditional item.
+          Fient: You may steal a small held item.
