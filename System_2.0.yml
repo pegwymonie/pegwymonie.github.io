@@ -105,7 +105,6 @@ System:
           - Make Request
           - Coerce
           - Demoralize
-          - Hide Action
           - Gather Information
           - Influence Attiude
           - Find Intrigues
@@ -494,9 +493,104 @@ System:
             Special: Does not require an active social combat. May only be used once per week per target.
             PostivieFactors:
               - Social
-              - Presence
+              - Manipulation
             OnSuccess: Deal one point of damage to a targets standing. You take two point of damage to your standing.
             Bonus:
               4E: Deal one point of damage to a targets standing.
-
+      Decieve:
+        Description: Lie to your target
+        PositiveFactors:
+          - Social
+          - Manipulation
+        NegativeFactors:
+          - Believability
+        OnSucess: Your lie is believed.
+        OnFailure: Your lie is noticed. Futher attepts to lie to the same target have there difficulty increased by 2.
+      Feign Harmlessness:
+        Description: Make the taget belive you are harmless.
+        PositiveFactors:
+          - Social
+          - Manipulation
+        NegativeFactors:
+          - Visible Weapons(4/ea)
+        OnSuccess: The target no longer sees you as a threat.
+        OnFailure: The target becomes even more weary of you. Futher attepts to feign harmlessness to the same target have there difficulty increased by 2.
+      Suggest:
+        Description: Suggest an action for yout target to take.
+        Difficulty: 4
+        PositiveFactors:
+          - Social
+          - Presence
+        OnSuccess: Target considers action, thinking the idea was there own.
+        OnFailure: The target does not consider the action.
+        Bonus:
+          4+: The target considers the action all his own doing, and forgets any involvment you had.
+      Make Request:
+        Description: Openly Request your target take an action.
+        Difficulty: 0
+        PositiveFactors:
+          - Social
+          - Presence
+        OnSuccess: Target considers action. Depending on the action the target may agree.
+        Bonus:
+          6+: Target reduces any counter request they may have.
+      Coerce:
+        Description: Force your target take an action.
+        Difficulty: 6
+        PositiveFactors:
+          - Social
+          - Manipulation
+        OnSuccess: Target takes the action, as long as it is not life threating.
+        Bonus:
+          6+: Target takes the action, reguardless of danger.
+      Demoralize:
+        Description: Intimidate the target, reducing any resolve they have.
+        Difficulty: 4
+        PositiveFactors:
+          - Social
+          - Presence
+        OnSuccess: The targets next action using Resolve, Stamina, or composure has its difficulty increased by 2.
+        OnFailure: The target becomes immune to your Demoralize till the end of combat.
+        Special: The target may spend an action to reduce the number of actions effected by one.
+        Bonus:
+          2E: This affects an additional action.
+          Physical Combat Manuver: This affects an additional action.
+          Phyical Attack: This affects an additional action.
+      Hide Action:
+        Description: Attempt to conceal an action
+        SubActions:
+          Physcial:
+            Difficulty: 0
+            PositiveFactors:
+              - Physcial
+              - Dexterity
+            Special: This must be used before another action.
+            OnSuccess: You perform the action unnoticed.
+          Social:
+            Difficulty: 0
+            PositiveFactors:
+              - Social
+              - Manipulation
+            Special: This must be used before another action.
+            OnSuccess: You perform the action unnoticed.
+          Physcial(Quick):
+            Difficulty: 2
+            PositiveFactors:
+              - Physcial
+              - Dexterity
+            Special: This must be used with another action.
+            OnSuccess: Peform the selected action as part of this action, its difficulty is increased by 2.
+          Social(Quick):
+            Difficulty: 2
+            PositiveFactors:
+              - Social
+              - Manipulation
+            Special: This must be used with another action.
+            OnSuccess: Peform the selected action as part of this action, its difficulty is increased by 2.
+      Gather Information:
+      Influence Attiude:
+      Find Intrigues:
+      Disguise:
+      Rear Animal:
+      Perform:
 
