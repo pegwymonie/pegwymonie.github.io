@@ -1,22 +1,3 @@
-#The actions are as follows: Physical Combat Maneuver(Generic), Mental Combat Maneuver(Generic), Social Combat Maneuver(Generic), Melee Attack, Ranged Attack, Move(Climb included), Draw Weapon, Reload Weapon, Move object, Sheath Weapon, Standup, Escape, Drop to the floor, Drop an Item, Reduce Initiative, Increase Initiative, First Aid, Aid Other, Concentrate, Ready Action, Open/Close Object, Jump, Tumble, Balance, Appraise, Encode Message, Deceive, Feign Harmlessness, Suggestion, Hide Action, Craft Item, Gather Information, Influence Attitude(Dip and Bluff), Make Request, Disarm Device, Sabotage, Open a Lock, Disguise, Grapple, Squeeze, Handle Animal, Push Animal, Teach Trick, Rear Animal, Identify, Long Term Care, Treat Wounds, Treat Poison, Dodge, Coerce, Demoralize, Influence Attitude, Knowledge Recall, Recall Intrigues, Search, analyze, Perform, Ride Animal, Drive Vehicle, Follow, Stalk, Hide.
-	Steal:
-		Physical Combat Maneuver: -> On Success: Choose a visible, non held item. You gain possession of that item. You must have a free hand, or drop your current item.
-	Feint:
-		Physical Combat Maneuver: -> On Success: Target may not defend against the next attack. This lasts a number of rounds equal to your degree of success.. The defender may spend an action point to reduce this by 2.
-	Draw Weapon:
-		(): -> You draw a single weapon.
-	Sheath Weapon:
-		(): -> You Sheath a single weapon.
-	Store Item(2 Actions:
-		(): -> You Store an item in your pack
-	Reload Weapon:
-		(): -> You reload a single weapon. See Weapon for additional details.
-	Escape:
-		(Physical, Dexterity): -> On Success: Decrease restraint by degree of success
-	Restrain:
-		(Physical, Dexterity): -> On Success: Target becomes restrained. Add degree of success to restraint.
-		Restraint: Indicates how well target is restrained. All restraint must be removed before the restrained condition is removed.
-		Restrained: You are unable to use your limbs, and maybe unable to speak. You cannot perform Physical actions, except for escape. If you cannot talk, you also cannot use social actions.
 
 Social Actions:
 	Direct Attack: (Argument, In the presence of)

@@ -288,7 +288,7 @@ System:
             OnFailure: If the target has any restrain value, reduce it by the amount you failed by.
             Bonus:
               Restrain: Increase the targets restrain value by 2.
-              2E: Increase
+              2E: Increase the targets restrain value by 2
       Move:
         Description: Move around the battle field
         SubActions:
@@ -379,3 +379,72 @@ System:
         Bonus:
           4E: You may steal an aditional item.
           Fient: You may steal a small held item.
+      Fient:
+        Description: Bluff your target into letting their guard down
+        Action Cost: 1
+        PositiveFactors:
+          - Social
+          - Manipulation
+        Difficulty: 4
+        OnSuccess: Target cannot oppose next attack by you this combat.
+        Special: The target may spend an action to reduce the number of actions effected by one.
+        OnFailure: You lose your next action this round. You cannot fient the target until after the next round.
+        Bonus:
+          2E: Target cannot oppose an additional attack by you this combat.
+      Draw Weapon:
+        Description: You draw a usable weapon
+        Action Cost: 1
+        NoRoll: You draw the weapon to a free hand.
+        Bonus:
+          Move: This action has no Action Cost
+      Sheath Weapon:
+        Description: You sheath a held weapon
+        Action Cost: 1
+        NoRoll: You sheath a held weapon
+        Bonus:
+          Move: This action has no Action Cost
+      Store Item:
+        Description: Put an item into your pack
+        Action Cost: 2
+        NoRoll: Put an item into your pack
+      Retrieve Item:
+        Description: Pull an item from your pack.
+        SubActions:
+          Quick:
+            Description: Pull an item from your pack.
+            Action Cost: 2
+            PositiveFactors:
+              - Mental
+              - Dexterity
+              - Item Size
+            OnSuccess: You retrieve the item
+            OnFailure: You fail to retrieve the item
+          Normal:
+            Description: Search your pack for an item.
+            Action Cost: ALL
+            NoRoll: You retrieve the item
+      Reload Weapon:
+        Description: Reload a weapon
+        SubActions:
+          Quick:
+            Description: Quickly reload your weapon
+            Action Cost: 1
+            PositiveFactors:
+              - Physical
+              - Dexterity
+            OnSuccess: You reload the weapon
+            OnFailure: See Weapon Malfunction
+          Normal:
+            Description: Reload your weapon
+            Action Cost: See Weapon
+            NoRoll: You reload the weapon
+      Escape:
+        Description: Attempt to escape from restraints
+        Action Cost: 1
+        Difficulty: 0
+        PositiveFactors:
+          - Physical
+          - Dexterity
+        OnSuccess: Reduce your restrain value. If your value is zero, or lower, you are no longer restrained.
+        Bonus:
+          2E: Reduce your restrain value.
