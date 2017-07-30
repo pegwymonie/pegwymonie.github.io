@@ -171,5 +171,10 @@ System:
         OnSuccess: 'You create a believable disguise.'
         Bonus:
           2E: 'The disguise becomes more believable'
-      'Rear Animal': null
+      Rear Animal:
+        Description: Raise an animal from youth. The resulting animal becomes loyal and can be further trained.
+        Difficulty: See Animal
+        PositiveFactors:
+          - Mental
+          - Presence
       Perform: null

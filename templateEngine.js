@@ -17,10 +17,10 @@ window.onload = function () {
 
   //Compile the template
   let compiled_template = Handlebars.compile(template);
-  let characterData = YAML.load('./Data/Characters.yaml');
-  let systemData = YAML.load('./Data/System.yaml');
-  let actionData = YAML.load('./Data/ComplexActions.yaml');
-  let simpleActionData = YAML.load('./Data/SimpleActions.yaml');
+  let characterData = YAML.load('./data/Characters.yaml');
+  let systemData = YAML.load('./data/System.yaml');
+  let actionData = YAML.load('./data/ComplexActions.yaml');
+  let simpleActionData = YAML.load('./data/SimpleActions.yaml');
 
   console.log(systemData);
   console.log(actionData);
