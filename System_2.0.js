@@ -16,8 +16,15 @@ window.onload = function () {
   });
 
   //Compile the template
-  var compiled_template = Handlebars.compile(template);
-  var data = YAML.load('./System_2.0.yml');
+  let compiled_template = Handlebars.compile(template);
+  let characterData = YAML.load('./Data/Characters.yaml');
+  let systemData = YAML.load('./Data/System.yaml');
+  let actionData = YAML.load('./Data/ComplexActions.yaml');
+  let simpleActionData = YAML.load('./Data/SimpleActions.yaml');
+
+  console.log(systemData);
+  console.log(actionData);
+  var data = deepmerge.all([characterData, systemData, actionData, simpleActionData]);
   console.log(data);
 
   //Render the data into the template

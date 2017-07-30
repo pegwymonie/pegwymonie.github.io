@@ -1,0 +1,62 @@
+Characters:
+  Attributes:
+    Description: "Attributes represent the general capabilities of a character. There are three: Mental, Physical, and Social. Attributes are graded on a 12 point scale. One represents the absolute minimum ability, 12 represents absolute mastery. All characters have at least a one, even a paraplegic would have a physical score of one. Starting characters have 12 points to spend, with a maximum of 7 points in any one attribute. Starting characters also have 4 feat points to spend. After character creation you gain an addition point to allocate for every 3 Feat points spent. Starting feats do not count towards this. Each Attribute also has two sub scores, offensive and defensive. For each point in an attribute, you have two points to allocate between the two sub-scores. These scores are only used when resolving opposed actions, otherwise the base score is used. character creation."
+  Skills:
+    Description: "Skills represent the specific capabilities of a character. Skills are graded on a 6 point scale. The number of points you have to spend in a category is equal to the amount of points allocated to the associated attribute. For General Skills, is the average of our attributes rounded down. This means most characters start with 5 general skill points to spend. When you gain an attribute point, you gain a point to spend in the associated skill category. These start off at zero."
+    Types:
+      Mental:
+        - Intelligence
+        - Wits
+        - Resolve
+      Physical:
+        - Strength
+        - Dexterity
+        - Stamina
+      Social:
+        - Presence
+        - Manipulation
+        - Composure
+      General:
+        - Perception
+        - Willpower
+        - Inspiration
+  Derived-Attributes:
+    Description: Derived Attributes are a collection of scores that are calculated based off of the other parts of a character. These can only be improved through increases in the related attributes or skills, or through feats
+    Types:
+      Hitpoints:
+        KeyAttributes:
+          - Stamina
+          - Willpower
+        Calculation: "Twice Stamina plus Willpower"
+        EQ: "(s,w) -> 2s+w"
+      Focus:
+        KeyAttributes:
+          - Resolve
+          - Willpower
+        Calculation: "Twice Resolve plus Willpower"
+        EQ: "(r,w) -> 2r+w"
+      Standing:
+        KeyAttributes:
+          - Composure
+          - Willpower
+        Calculation: "Twice Composure plus Willpower"
+        EQ: "(c,w) -> 2c+w"
+      Speed:
+        KeyAttributes: Physical
+        Calculation: "Four plus Twice Physical"
+        EQ: "(p) -> 4 + p2"
+      Initiative:
+        KeyAttributes:
+          - Wits
+          - Dexterity
+          - Perception
+        Calculation: "The Sum of Wits, Dexterity, and Perception"
+        EQ: "(w,d,p) -> w+d+p"
+      Action Points:
+        KeyAttributes:
+          - Wits
+          - Dexterity
+          - Manipulation
+          - Perception
+        Calculation: "The Average Of Wits, Dexterity, Manipulation, Perception"
+        EQ: "(w,d,m,p) -> Floor(1 +W + D + M + P)/4"

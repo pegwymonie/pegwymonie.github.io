@@ -1,0 +1,175 @@
+System:
+  Actions:
+    Notations:
+      'Action Cost': 'How many action points this action requires'
+      PositiveFactors: 'Factors that raise your threshold'
+      NegativeFactors: 'Factors that reduce your threshold'
+      Difficulty: 'Indicates how difficult the action is. This reduces your threshold.'
+      NoRoll: 'What happens with out a roll. Only certain actions have this.'
+      OnSuccess: 'What happens when you meet your threshold'
+      OnFailure: 'What happens when you do not meet your threshold'
+      Bonus: 'What happens when you succeed by more than zero.'
+      BonusNotations:
+        XE: 'Something aditional for every X you succeed by'
+        X+: 'Something aditional if you succed by at least X'
+        X-Y: 'Something aditional if your succeses falls between x and y'
+        '<ActionName>': 'Something aditional if this action was performed directly before this action.'
+    Descriptions:
+      Steal:
+        Description: 'Steal an item from your target'
+        'Action Cost': 1
+        Difficulty: 4
+        PositiveFactors:
+          - Physical
+          - Dexterity
+        NegativeFactors:
+          - Targets(Perception)
+        OnSuccess: 'Choose a visible, non held item. You gain possession of that item. You must have a free hand, or drop your current item.'
+        Bonus:
+          4E: 'You may steal an aditional item.'
+          Fient: 'You may steal a small held item.'
+      Fient:
+        Description: 'Bluff your target into letting their guard down'
+        'Action Cost': 1
+        PositiveFactors:
+          - Social
+          - Manipulation
+        Difficulty: 4
+        OnSuccess: 'Target cannot oppose next attack by you this combat.'
+        Special: 'The target may spend an action to reduce the number of actions effected by one.'
+        OnFailure: 'You lose your next action this round. You cannot fient the target until after the next round.'
+        Bonus:
+          2E: 'Target cannot oppose an additional attack by you this combat.'
+      'Draw Weapon':
+        Description: 'You draw a usable weapon'
+        'Action Cost': 1
+        NoRoll: 'You draw the weapon to a free hand.'
+        Bonus:
+          Move: 'This action has no Action Cost'
+      'Sheath Weapon':
+        Description: 'You sheath a held weapon'
+        'Action Cost': 1
+        NoRoll: 'You sheath a held weapon'
+        Bonus:
+          Move: 'This action has no Action Cost'
+      'Store Item':
+        Description: 'Put an item into your pack'
+        'Action Cost': 2
+        NoRoll: 'Put an item into your pack'
+      Escape:
+        Description: 'Attempt to escape from restraints'
+        'Action Cost': 1
+        Difficulty: 0
+        PositiveFactors:
+          - Physical
+          - Dexterity
+        OnSuccess: 'Reduce your restrain value. If your value is zero, or lower, you are no longer restrained.'
+        Bonus:
+          2E: 'Reduce your restrain value.'
+      Decieve:
+        Description: 'Lie to your target'
+        PositiveFactors:
+          - Social
+          - Manipulation
+        NegativeFactors:
+          - Believability
+        OnSucess: 'Your lie is believed.'
+        OnFailure: 'Your lie is noticed. Futher attepts to lie to the same target have there difficulty increased by 2.'
+      'Feign Harmlessness':
+        Description: 'Make the taget belive you are harmless.'
+        PositiveFactors:
+          - Social
+          - Manipulation
+        NegativeFactors:
+          - 'Visible Weapons(4/ea)'
+        OnSuccess: 'The target no longer sees you as a threat.'
+        OnFailure: 'The target becomes even more weary of you. Futher attepts to feign harmlessness to the same target have there difficulty increased by 2.'
+      Suggest:
+        Description: 'Suggest an action for yout target to take.'
+        Difficulty: 4
+        PositiveFactors:
+          - Social
+          - Presence
+        OnSuccess: 'Target considers action, thinking the idea was there own.'
+        OnFailure: 'The target does not consider the action.'
+        Bonus:
+          4+: 'The target considers the action all his own doing, and forgets any involvment you had.'
+      'Make Request':
+        Description: 'Openly Request your target take an action.'
+        Difficulty: 0
+        PositiveFactors:
+          - Social
+          - Presence
+        OnSuccess: 'Target considers action. Depending on the action the target may agree.'
+        Bonus:
+          6+: 'Target reduces any counter request they may have.'
+      Coerce:
+        Description: 'Force your target take an action.'
+        Difficulty: 6
+        PositiveFactors:
+          - Social
+          - Manipulation
+        OnSuccess: 'Target takes the action, as long as it is not life threating.'
+        Bonus:
+          6+: 'Target takes the action, reguardless of danger.'
+      Demoralize:
+        Description: 'Intimidate the target, reducing any resolve they have.'
+        Difficulty: 4
+        PositiveFactors:
+          - Social
+          - Presence
+        OnSuccess: 'The targets next action using Resolve, Stamina, or composure has its difficulty increased by 2.'
+        OnFailure: 'The target becomes immune to your Demoralize till the end of combat.'
+        Special: 'The target may spend an action to reduce the number of actions effected by one.'
+        Bonus:
+          2E: 'This affects an additional action.'
+          'Physical Combat Manuver': 'This affects an additional action.'
+          'Phyical Attack': 'This affects an additional action.'
+      'Gather Information':
+        Description: 'Find public information on a specific individual or topic.'
+        Difficulty: 0
+        ActionCost: '4 Hours'
+        PositiveFactors:
+          - Social
+          - Presence
+        Special: 'Information gathered from this action cannot typically be used with Discredit, as it is already semi public.'
+        OnSuccess: 'Find information know to most common folk'
+        4+: 'Find information know to some folk'
+        8+: 'Find information know to this "in the know"'
+      'Find Intrigues':
+        Description: 'Find public information on a specific individual or topic.'
+        Difficulty: 4
+        ActionCost: '4 Hours'
+        PositiveFactors:
+          - Social
+          - Presence
+        NegativeFactors:
+          - Targets(Composure)
+        Special: 'Information gathered from this action can be used with Discredit, but must be kept secret until used.'
+        OnSuccess: 'Find intrigues that could be damaging to your target'
+        4+: 'The intrigue found reduces the difficulty of the discredit that consumes it.'
+      'Influence Attiude':
+        Description: 'Charm or infuriate a person, changing there attitude towards you.'
+        ActionCost: '15 Minutes'
+        Difficulty: 0
+        PositiveFactors:
+          - Social
+          - Composure
+        NegativeFactors:
+          - Targets(Attitude)
+        OnSuccess: 'Increase or Decrease the targets attitude by one step'
+        Bonus:
+          4E: 'Increase or Decrease the targets attitude by one step'
+      Disguise:
+        Description: 'Create a disguise to assume a new identity.'
+        Difficulty: Varies
+        PositiveFactors:
+          - Social
+          - Mental
+          - Composure
+          - Wits
+        OnSuccess: 'You create a believable disguise.'
+        Bonus:
+          2E: 'The disguise becomes more believable'
+      'Rear Animal': null
+      Perform: null

@@ -1,0 +1,71 @@
+System:
+  Actions:
+    Description: Actions are things a character can do when it is their turn to act. As a general rule performing an action, even reactionary, cost an action point. Action noted with a hashtag ('#') cannot be used without a feat that allows their use. This list is not exhasutive, some setting may need more or less actions.
+    Types:
+      Physcial:
+        Types:
+          - Melee Attack
+          - Ranged Weapon Attack
+          - Thrown Weapon Attack
+          - '# Parry'
+          - Physical Combat Maneuver
+          - Walk
+          - Jog
+          - Run
+          - Climb
+          - Swim
+          - Squeeze
+          - Stand up
+          - Drop Prone
+          - Draw Weapon
+          - Sheath Weapon
+          - Store Object
+          - Reload Weapon
+          - Move Object
+          - Open/Close object
+          - Restrain
+          - Escape
+          - Hide Action
+          - Dodge
+          - Follow
+          - Stalk
+          - Hide
+          - Ride Animal
+          - Perform
+      Social:
+        Types:
+          - Social Attack
+          - Social Combat Maneuver
+          - Decieve
+          - Feign Harmlessness
+          - Suggest
+          - Make Request
+          - Coerce
+          - Demoralize
+          - Gather Information
+          - Influence Attiude
+          - Find Intrigues
+          - Disguise
+          - Rear Animal
+          - Perform
+      Mental:
+        Types:
+          - Mental Combat Maneuver
+          - Teach Trick
+          - Concentrate
+          - Appraise
+          - Encode Message
+          - Identify
+          - Long Term Care
+          - Treat Wounds
+          - Treat Poison
+          - Analyze
+          - Drive Vehicle
+      General:
+        Types:
+          - Search
+          - Notice
+          - Craft
+          - Modify Initiative
+          - Aid Other
+          - Ready Action

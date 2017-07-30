@@ -1,0 +1,347 @@
+System:
+  Actions:
+    Notations:
+      'Action Cost': 'How many action points this action requires'
+      PositiveFactors: 'Factors that raise your threshold'
+      NegativeFactors: 'Factors that reduce your threshold'
+      Difficulty: 'Indicates how difficult the action is. This reduces your threshold.'
+      NoRoll: 'What happens with out a roll. Only certain actions have this.'
+      OnSuccess: 'What happens when you meet your threshold'
+      OnFailure: 'What happens when you do not meet your threshold'
+      Bonus: 'What happens when you succeed by more than zero.'
+      BonusNotations:
+        XE: 'Something aditional for every X you succeed by'
+        X+: 'Something aditional if you succed by at least X'
+        X-Y: 'Something aditional if your succeses falls between x and y'
+        '<ActionName>': 'Something aditional if this action was performed directly before this action.'
+      SubActions: 'Lists the avalible subactions.'
+    Descriptions:
+      'Physcial Attack':
+        Description: 'Perform an attack to harm a target.'
+        SubActions:
+          'Melee Attack':
+            Description: 'Attack using a Melee Weapon'
+            'Action Cost': 1
+            PositiveFactors:
+              - Physcial
+              - Strength
+            OnSuccess: 'Deal Weapon Damage and Effect to Defender, See Weapon For aditional details.'
+            OnFailure: 'The Attack misses'
+            Bonus:
+              1+: 'See Weapon for aditional effects.'
+          'Ranged Attack':
+            Description: 'Attack with a Ranged Weapon'
+            'Action Cost': 1
+            PositiveFactors:
+              - Physcial
+              - Dexterity
+            NegativeFactors:
+              - Distance
+            OnSuccess: 'Deal Weapon Damage and Effect to Defender, See Weapon For aditional details.'
+            OnFailure: 'The Attack misses'
+            Bonus:
+              1+: 'See Weapon for aditional effects.'
+          'Thrown Attack':
+            Description: 'Throw a throwing weapon, or Melee weapon.'
+            'Action Cost': 1
+            PositiveFactors:
+              - Physcial
+              - Dexterity
+            NegativeFactors:
+              - Distance
+            OnSuccess: 'Deal Weapon Damage and Effect to Defender, See Weapon For aditional details.'
+            OnFailure: 'The Attack misses'
+            Bonus:
+              1+: 'See Weapon for aditional effects.'
+      'Physical Combat Maneuver':
+        Description: 'Perform a combat manuever to penalize an opponent, or aid an ally.'
+        SubActions:
+          Trip:
+            Description: 'Trip the target, causing them to fall prone.'
+            'Action Cost': 1
+            Difficulty: 4
+            PositiveFactors:
+              - Physical
+              - Dexterity
+            OnSuccess: 'Your target is knocked prone.'
+            OnFailure: 'You lose your next action this round'
+            Bonus:
+              2E: 'Target Loses Action Point'
+          'Bull Rush':
+            Description: 'Rush the target, pushing them back in the process.'
+            'Action Cost': 1
+            Difficulty: 2
+            PositiveFactors:
+              - Physical
+              - Strength
+            OnSuccess: 'Your target is pushed back equal to half your speed.'
+            OnFailure: 'You lose your next action this round'
+            Bonus:
+              1E: 'Increse the push distance by one forth your speed, min 1'
+              4+: 'You may make the target fall prone'
+          'Dirty Trick':
+            Description: 'Use dirty fighting tactics to hinder an opponent'
+            'Action Cost': 1
+            Difficulty: 4
+            PositiveFactors:
+              - Physical
+              - Dexterity
+            OnSuccess: 'Choose a Physical Skill. The next action the target performs using that skill had its difficulty increased by 2.'
+            OnFailure: 'You lose your next action this round. Your next dirty trick this combat has its difficulty incresed by 2.'
+            Special: 'The target may spend an action to reduce the number of actions effected by one.'
+            Bonus:
+              2E: 'The penalty lasts and aditional action. This penalty ends at the end of the combat.'
+          Disarm:
+            Description: 'Make a target drop a weapon or held item.'
+            'Action Cost': 1
+            Difficulty: 4
+            PositiveFactors:
+              - Physical
+              - Dexterity
+            OnSuccess: 'Target drops targeted weapon/item'
+            OnFailure: 'You lose your next action this round. Your next Physcial Attack or disarm versus the selected target has its difficulty increased by 2.'
+            Bonus:
+              5+: 'You may gain control of the item, instead of it droping.'
+          Drag:
+            Description: 'Move the target in the direction of your choice'
+            'Action Cost': 1
+            Difficulty: 6
+            PositiveFactors:
+              - Physical
+              - Strength
+            OnSuccess: 'Move target up to one forth your movement speed. Changing direction counts as double.'
+            OnFailure: 'You lose your next action this round. Roll a d8, move one square in that direction (1=north).'
+            Bonus:
+              2E: 'Increase the distance by one forth your speed.'
+              5+: 'You may make the target fall prone'
+          Charge:
+            Description: 'You move towards the target and make an attack.'
+            'Action Cost': 1
+            Difficulty: '4 + 2'
+            PositiveFactors:
+              - Physical
+              - Strength
+            OnSuccess: 'You may make an Melee Attack roll as part of this action, this does not cost an action point. Its action difficulty is increased by 2.'
+            OnFailure: 'You lose your next action this round. Any opposing action you take this round has its difficulty increased by 2.'
+            Bonus:
+              4+: 'Chose another Combat Manuever you are able to perform. You may perform it with out roll, using the leftover success minus 4.'
+          Reposition:
+            Description: 'You help an ally move into better positioning'
+            'Action Cost': 1
+            Difficulty: 2
+            PositiveFactors:
+              - Physcial
+              - Dexterity
+            OnSuccess: 'You may reposition a willing target up to 1/2 your movement speed. They may not move more that 2 distance from you, or any enemies adjacent to you.'
+            OnFailure: 'You lose your next action this round.'
+          Sunder:
+            Description: 'Attempt to destroy a held or worn item.'
+            'Action Cost': 1
+            Difficulty: 4
+            PositiveFactors:
+              - 'Physcial Attack'
+            NegativeFactors:
+              - 'Defenders Perception'
+            OnSuccess: 'Execute the attack as normal, apply damage to item.'
+            OnFailure: 'You lose your next action this round. Your next Physcial Attack or Sunder versus the selected target has its difficulty increased by 2.'
+          Restrain:
+            Description: 'Restrain a target using rope or other restraning Device'
+            'Action Cost': 1
+            Difficulty: 8
+            PositiveFactors:
+              - Physcial
+              - Dexterity
+            OnSuccess: 'You restrain the target. Its restrain value starts at 1'
+            OnFailure: 'If the target has any restrain value, reduce it by the amount you failed by.'
+            Bonus:
+              Restrain: 'Increase the targets restrain value by 2.'
+              2E: 'Increase the targets restrain value by 2'
+      Move:
+        Description: 'Move around the battle field'
+        SubActions:
+          Walk:
+            Description: 'Move normally'
+            'Action Cost': 1
+            NoRoll: 'Move up to half your speed.'
+          Jog:
+            Description: 'Move with porpoise'
+            'Action Cost': 1
+            NoRoll: 'Move up to your speed. Any follow up action that is not a Move action has its difficulty increased by 2'
+          Run:
+            Description: 'Move with speed'
+            'Action Cost': 1
+            NoRoll: 'Move one and a half your speed.'
+            PositiveFactors:
+              - Physical
+              - Stamina
+            OnSuccess: 'You may move up to twice your speed. Any follow up action that is not a Move action has its difficulty increased by 4'
+            OnFailure: 'Move one and a half your speed. Inflict one temporary Hitpoint damage.'
+            Bonus:
+              Jog: 'You move an aditional amount equal to your speed'
+              Run: 'You move an aditional amount equal to twice your speed'
+              2E: 'You move an aditional amount equal to your speed'
+          Climb:
+            Description: 'Move up a wall'
+            'Action Cost': 1
+            Difficulty: 'See Terrain'
+            PositiveFactors:
+              - Physical
+              - Strength
+            NegativeFactors:
+              - Burden
+            OnSuccess: 'You may move up to one forth your speed.'
+            OnFailure: 'You fall distance equal to the degree of failure'
+            Bonus:
+              Move: 'You move an aditional one forth your speed.'
+              1E: 'You move an adition one forth your speed.'
+          'Stand Up':
+            Description: 'Stand up from prone'
+            'Action Cost': 1
+            Difficulty: 'See Terrain'
+            NoRoll: 'If the difficulty is zero, you stand up.'
+            PositiveFactors:
+              - Physical
+              - Strength
+            OnSuccess: 'You stand up.'
+          'Drop Prone':
+            Description: 'You fall to the ground prone'
+            'Action Cost': 1
+            NoRoll: 'You drop prone'
+          'Pull Heavy Object':
+            Description: 'You move an object'
+            'Action Cost': 2
+            Difficulty: 'Based on object weight'
+            NoRoll: 'If difficulty is zero, You move item one forth your movement.'
+            PositiveFactors:
+              - Physical
+              - Strength
+            NegativeFactors:
+              - 'Item Weight'
+            'On Success': 'You move item one forth your movement.'
+          'Lift Heavy Object':
+            Description: 'You lift an object off the ground'
+            'Action Cost': 2
+            Difficulty: 'Based on object weight'
+            NoRoll: 'If difficulty is zero, you lift the item to your waist.'
+            PositiveFactors:
+              - Physical
+              - Strength
+              - 'Previous Lift Action'
+            NegativeFactors:
+              - 'Item Weight'
+            OnSuccess: 'You lift the object off the ground, to waist height.'
+            Bonus:
+              2+: 'You lift the object to shoulder height'
+              4+: 'You lift the object above your head'
+      'Retrieve Item':
+        Description: 'Pull an item from your pack.'
+        SubActions:
+          Quick:
+            Description: 'Pull an item from your pack.'
+            'Action Cost': 2
+            PositiveFactors:
+              - Mental
+              - Dexterity
+              - 'Item Size'
+            OnSuccess: 'You retrieve the item'
+            OnFailure: 'You fail to retrieve the item'
+          Normal:
+            Description: 'Search your pack for an item.'
+            'Action Cost': ALL
+            NoRoll: 'You retrieve the item'
+      'Reload Weapon':
+        Description: 'Reload a weapon'
+        SubActions:
+          Quick:
+            Description: 'Quickly reload your weapon'
+            'Action Cost': 1
+            PositiveFactors:
+              - Physical
+              - Dexterity
+            OnSuccess: 'You reload the weapon'
+            OnFailure: 'See Weapon Malfunction'
+          Normal:
+            Description: 'Reload your weapon'
+            'Action Cost': 'See Weapon'
+            NoRoll: 'You reload the weapon'
+      'Social Attack':
+        Description: 'Attack someones public standing.'
+        Special: 'Social attacks can only be used in social combat.'
+        SubActions:
+          'Cast Aspertions':
+            Description: 'Attack the standing of an individual.'
+            'Action Cost': 1
+            Difficulty: 6
+            PostivieFactors:
+              - Social
+              - Presence
+            OnSuccess: 'Deal one point of damage to a targets standing.'
+            Bonus:
+              2E: 'Deal one point of damage to a targets standing.'
+          Smear:
+            Description: 'Lie to attack the standing of an individual.'
+            'Action Cost': 1
+            Difficulty: 4
+            PostivieFactors:
+              - Social
+              - Presence
+            NegativeFactors:
+              - Target(Standing)
+            OnSuccess: 'Deal one point of damage to a targets standing.'
+            OnFailure: 'Take two point of damage to your standing.'
+            Bonus:
+              2E: 'Deal one point of damage to a targets standing.'
+          Discredit:
+            Description: 'Reveal harmful information about a target'
+            'Action Cost': 1
+            Difficulty: 4
+            Special: 'Requires an unused intrigue.'
+            PostivieFactors:
+              - Social
+              - Presence
+              - Target(Standing)
+            OnSuccess: 'Deal two point of damage to a targets standing.'
+            Bonus:
+              2E: 'Deal one point of damage to a targets standing.'
+          'Spread Rummors':
+            Description: 'Reveal harmful information about a target'
+            'Action Cost': 1
+            Difficulty: 4
+            Special: 'Does not require an active social combat. May only be used once per week per target.'
+            PostivieFactors:
+              - Social
+              - Manipulation
+            OnSuccess: 'Deal one point of damage to a targets standing. You take two point of damage to your standing.'
+            Bonus:
+              4E: 'Deal one point of damage to a targets standing.'
+      'Hide Action':
+        Description: 'Attempt to conceal an action'
+        SubActions:
+          Physcial:
+            Difficulty: 0
+            PositiveFactors:
+              - Physcial
+              - Dexterity
+            Special: 'This must be used before another action.'
+            OnSuccess: 'You perform the action unnoticed.'
+          Social:
+            Difficulty: 0
+            PositiveFactors:
+              - Social
+              - Manipulation
+            Special: 'This must be used before another action.'
+            OnSuccess: 'You perform the action unnoticed.'
+          Physcial(Quick):
+            Difficulty: 2
+            PositiveFactors:
+              - Physcial
+              - Dexterity
+            Special: 'This must be used with another action.'
+            OnSuccess: 'Peform the selected action as part of this action, its difficulty is increased by 2.'
+          Social(Quick):
+            Difficulty: 2
+            PositiveFactors:
+              - Social
+              - Manipulation
+            Special: 'This must be used with another action.'
+            OnSuccess: 'Peform the selected action as part of this action, its difficulty is increased by 2.'
