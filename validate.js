@@ -4,7 +4,7 @@ var success = true
 page.open('https://pegwymonie.github.io/System_2.0.html', function (status) {
   if (status !== "success") {success = false;}
   console.log("Final Status: " + (success ? "Success" : "Failed"));
-  phantom.exit();
+  phantom.exit((success ? 0 : 1));
 });
 
 page.onResourceReceived = function (response) {
