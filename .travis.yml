@@ -1,0 +1,3 @@
+language: generic # don't install any environment
+
+script: phantomjs ./validate.js
