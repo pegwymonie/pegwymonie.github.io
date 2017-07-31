@@ -172,9 +172,23 @@ System:
         Bonus:
           2E: 'The disguise becomes more believable'
       Rear Animal:
-        Description: Raise an animal from youth. The resulting animal becomes loyal and can be further trained.
+        Description: Raise an animal.
+        Action Cost: 2 Hours per day
         Difficulty: See Animal
         PositiveFactors:
           - Mental
           - Presence
-      Perform: null
+        OnSuccess: Increase an animals attitude towards you. Reduce the animals wildness.
+        OnFailure: If you fail by more than 4, decrease the animals attitude towards you. Increase the animals wildness.
+        Bonus:
+          4+: Reduce the animals wildness.
+      Perform:
+        Description: Entertain an audience.
+        Action Cost: N/A (1)
+        Difficulty: 0
+        PositiveFactors:
+          - Social
+          - Presence
+        OnSuccess: You influence the attitude of the entire audience by one step for an hour.
+        Bonus:
+          3E: Increase either the duraiton or strength of the effect.
