@@ -1,0 +1,17 @@
+System:
+  Feats:
+    Notations:
+      'Action Cost': 'How many action points this action requires'
+      PositiveFactors: 'Factors that raise your threshold'
+      NegativeFactors: 'Factors that reduce your threshold'
+      Difficulty: 'Indicates how difficult the action is. This reduces your threshold.'
+      NoRoll: 'What happens with out a roll. Only certain actions have this.'
+      OnSuccess: 'What happens when you meet your threshold'
+      OnFailure: 'What happens when you do not meet your threshold'
+      Bonus: 'What happens when you succeed by more than zero.'
+      BonusNotations:
+        XE: 'Something aditional for every X you succeed by'
+        X+: 'Something aditional if you succed by at least X'
+        X-Y: 'Something aditional if your succeses falls between x and y'
+        '<ActionName>': 'Something aditional if this action was performed directly before this action.'
+    Descriptions:

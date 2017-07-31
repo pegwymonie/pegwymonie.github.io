@@ -21,10 +21,12 @@ window.onload = function () {
   let systemData = YAML.load('./data/System.yaml');
   let actionData = YAML.load('./data/ComplexActions.yaml');
   let simpleActionData = YAML.load('./data/SimpleActions.yaml');
+  let featData = YAML.load('./data/Feats.yaml');
+
 
   console.log(systemData);
   console.log(actionData);
-  var data = deepmerge.all([characterData, systemData, actionData, simpleActionData]);
+  var data = deepmerge.all([characterData, systemData, actionData, simpleActionData, featData]);
   console.log(data);
 
   //Render the data into the template

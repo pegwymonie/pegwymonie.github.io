@@ -28,8 +28,6 @@ Combat is segregated into individual rounds. Each round characters may make as m
 
 
 
-Feats represent the individuality of a character, giving flavor beyond basic attributes and skills. Each feat has an associated cost, indicating the power level of the feat. Feats with a hashtag are available only with gm approval.
-
 (Cost Per)[Total Tiers] Name
 Tier One Description
 

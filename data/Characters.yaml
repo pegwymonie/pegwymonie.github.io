@@ -60,3 +60,5 @@ Characters:
           - Perception
         Calculation: "The Average Of Wits, Dexterity, Manipulation, Perception"
         EQ: "(w,d,m,p) -> Floor(1 +W + D + M + P)/4"
+  Feats:
+    Description: Feats represent the individuality of a character, giving flavor beyond basic attributes and skills. Each feat has an associated cost, indicating the power level of the feat. Feats with a hashtag are available only with gm approval.
