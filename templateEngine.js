@@ -15,13 +15,15 @@ window.onload = function () {
     return options.inverse(this)
   });
 
+  var cacheBuster = "?" + Date.now()
+
   //Compile the template
   let compiled_template = Handlebars.compile(template);
-  let characterData = YAML.load('./data/Characters.yaml');
-  let systemData = YAML.load('./data/System.yaml');
-  let actionData = YAML.load('./data/ComplexActions.yaml');
-  let simpleActionData = YAML.load('./data/SimpleActions.yaml');
-  let featData = YAML.load('./data/Feats.yaml');
+  let characterData = YAML.load('./data/Characters.yaml' + cacheBuster);
+  let systemData = YAML.load('./data/System.yaml' + cacheBuster);
+  let actionData = YAML.load('./data/ComplexActions.yaml' + cacheBuster);
+  let simpleActionData = YAML.load('./data/SimpleActions.yaml' + cacheBuster);
+  let featData = YAML.load('./data/Feats.yaml' + cacheBuster);
 
 
   console.log(systemData);
