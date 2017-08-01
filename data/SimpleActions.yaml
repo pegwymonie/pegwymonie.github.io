@@ -192,3 +192,96 @@ System:
         OnSuccess: You influence the attitude of the entire audience by one step for an hour.
         Bonus:
           3E: Increase either the duraiton or strength of the effect.
+      Teach Trick:
+        Desription: Teach an animal a new trick
+        Action Cost: 2 Hours per day
+        Difficulty: See Animal and Trick
+        PositiveFactors:
+          - Mental
+          - Resolve
+        OnSuccess: You teach the animal a new trick, or improve an old trick.
+      Concentrate:
+        Desription: Train your focus on something.
+        Action Cost: All
+        Difficulty: Focus Damage
+        PositiveFactors:
+          - Mental
+          - Resolve
+        OnSuccess: You successfully focus. If used standalone, recover one point of focus damage taken this combat.
+      Appraise:
+        Desription: Estimate the value of an item
+        Action Cost: All
+        Difficulty: See Item (This should be hidden from the player)
+        PositiveFactors:
+          - Mental
+          - Inteligence
+        OnSuccess: You successfully estimate the items value.
+      Encode Message:
+        Desription: Make a message understandable only to those who know the code
+        Action Cost: Message Length
+        Difficulty: 0
+        PositiveFactors:
+          - Mental
+          - Intelligence
+        OnSuccess: The message is successfully encoded, and can be unencoded by those who know the code.
+        OnFailure: The message is encoded, but will not decode properly
+      Identify:
+        Desription: Identify the properties of a magic item
+        Action Cost: ALL
+        Difficulty: See Item (This should be hidden from the player)
+        PositiveFactors:
+          - Mental
+          - Intelligence
+        OnSuccess: You identify the properties of the item
+      Treat Wounds:
+        Desription: Care for a wounded target
+        Action Cost: 2 Hours
+        Difficulty: Half Targets Untended Hp Damage
+        PositiveFactors:
+          - Mental
+          - Dexterity
+        OnSuccess: Tend one point of hp damage. Tended wounds heal twice as fast.
+      First Aid:
+        Desription: Apply first ait to the target
+        Action Cost: All
+        Difficulty: Half Targets Untended Hp Damage
+        PositiveFactors:
+          - Mental
+          - Dexterity
+        OnSuccess: Stop one ongoing non magical negative effect. Stabalize a dying target.
+      Long Term Care:
+        Desription: Care for a injured person
+        Action Cost: 4 hours
+        Difficulty: Targets Untended Hp Damage
+        PositiveFactors:
+          - Mental
+          - Inteligence
+        OnSuccess: Target Recovers one point of hp damage
+        Bonus:
+          4E: Target Recovers one point of hp damage
+      Treat Poison:
+        Desription: Treat a target that has been poisioned
+        Action Cost: 1 Minuts
+        Difficulty: See poison
+        PositiveFactors:
+          - Mental
+          - Intelligence
+        OnSuccess: The posion is stalled. Any ongoing effects are stopped.
+        Bonus:
+          Treat Posion: The posion is stopped completly.
+      Analyze:
+        Desription: Look deeper to find aditional details
+        Action Cost: 1
+        Difficulty: 0
+        PositiveFactors:
+          - Mental
+          - Wits
+        OnSuccess: Find aditional details about an physical object, or space.
+      Drive Vehicle:
+        Desription: Drive a car
+        Action Cost: Ongoing
+        Difficulty: See Car
+        PositiveFactors:
+          - Mental
+          - Composure
+        OnSuccess: You don't wreck.
