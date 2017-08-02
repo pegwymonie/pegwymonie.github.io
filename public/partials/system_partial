@@ -1,0 +1,27 @@
+<!-- System -->
+<div id="system" class="section">
+    <h1 class="section-title"><a class="collapse--a" data-toggle="collapse" href="#collapseSystem">System</a></h1>
+    <div id="collapseSystem" class="collapse in">
+        {{#each System}}
+        <div class="section--panel panel panel-primary">
+            <div class="section--panel-heading panel-heading">
+              <a class="collapse--a" data-toggle="collapse" href="#collapseSystem-{{@key}}">
+                {{@key}}
+              </a>
+            </div>
+            <div id="collapseSystem-{{@key}}" class=" collapse section--panel-body panel-body">
+                {{#if Description}}<p class="section-desc">{{Description}}</p>{{/if }}
+                
+                <!-- Types -->
+                {{#if Types}} {{#> systemActionTypesPartial this}}{{/ systemActionTypesPartial}} {{/if }}
+                
+                <!-- Notations -->
+                {{#if Notations}} {{#> systemNotationsPartial this}}{{/ systemNotationsPartial}}{{/if}}
+
+                <!-- Descriptions -->
+                {{#if Descriptions}}{{#> systemDescriptionsPartial this}}{{/ systemDescriptionsPartial}}{{/if}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

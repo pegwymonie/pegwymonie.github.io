@@ -1,0 +1,26 @@
+<div class="{{@key}}-descriptions">
+    <h3 class="{{@key}}-descriptions-title">
+        <a data-toggle="collapse" class="collapse--a" href="#collapseSystem-{{@key}}-Descriptions">
+            Descriptions
+        </a>
+    </h3>
+    <div id="collapseSystem-{{@key}}-Descriptions" class="collapse in">
+        <ul class="types-list-content--bullet">
+            {{#each Descriptions}}
+              {{#equal @../key 'Actions'}}
+              
+                {{#> systemActionPartial this}}
+                  <div class="text-center">Action partial suppose to go here.</div>
+                {{/ systemActionPartial}}
+              {{/equal}}
+
+              {{#equal @../key 'Feats'}}
+                {{#> systemFeatsPartial this}}
+                  <div class="text-center">Feats partial suppose to go here.</div>
+                {{/ systemFeatsPartial}}
+              {{/equal}}
+
+            {{/each}}
+        </ul>
+    </div>
+</div>
