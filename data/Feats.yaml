@@ -14,13 +14,16 @@ System:
             - Feat a
             - Feat b
         Attribute:
-          Phyiscial:
-            - 4+
+          One:
+            Phyiscial:
+              - 4+
         Skill:
-          Strength:
-            - 4+
+          Any:
+            Strength:
+              - 4+
         Other:
-          - Defeated the Jabberwocky
+          All:
+            - Defeated the Jabberwocky
         Types:
           WeaponGroup: Swords, Spears, Bows, Crossbow
       Benefits:
@@ -33,7 +36,8 @@ System:
         Description:
         Requirements:
           Other:
-            - 4 Years of service in a military-esq organization
+            All:
+              - 4 Years of service in a military-esq organization
           Types:
             Military: Old Kingdom, Ancelstierre, Southerling
         Benefits:
@@ -45,7 +49,8 @@ System:
         Description:
         Requirements:
           Attribute:
-            Physcial: 6+
+            All:
+              Physcial: 6+
         Benefits:
           Rank 1: When making a attack with your primary weapon, you may make additional attack with another held weapon but this increases the action difficulty by 4. This second attack is also made with the increased difficulty.
           Rank 2: The additional action difficulty is increased by 2 instead of 4.
@@ -56,9 +61,10 @@ System:
         Decription:
         Requirments:
           Skill:
-            Dexterity: 3+
-            Wits: 3+
-            Manipulation: 3+
+            Two:
+              Dexterity: 3+
+              Wits: 3+
+              Manipulation: 3+
         Benefits:
           Rank 1: When making an initiative roll, increase your success level by one.
           Rank 2: You may change initiative once per combat for free
