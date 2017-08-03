@@ -21,9 +21,46 @@ System:
             - 4+
         Other:
           - Defeated the Jabberwocky
+        Types:
+          WeaponGroup: Swords, Spears, Bows, Crossbow
       Benefits:
         Rank X: Bonus for specific rank
         Feat X: Bonus when you also posess Rank X of another Feat
-
-
     Descriptions:
+      Military Training:
+        Cost: 1
+        Ranks: 2
+        Description:
+        Requirements:
+          Other:
+            - 4 Years of service in a military-esq organization
+          Types:
+            Military: Old Kingdom, Ancelstierre, Southerling
+        Benefits:
+          Rank 1: Ignore up to two weapon difficulty when utilizing weapons that were in service during your service.
+          Rank 2: Ignore up to two action difficulty in life threatenting situations.
+      Two Weapon Fighting:
+        Cost: 1
+        Ranks: 3
+        Description:
+        Requirements:
+          Attribute:
+            Physcial: 6+
+        Benefits:
+          Rank 1: When making a attack with your primary weapon, you may make additional attack with another held weapon but this increases the action difficulty by 4. This second attack is also made with the increased difficulty.
+          Rank 2: The additional action difficulty is increased by 2 instead of 4.
+          Rank 3: There is no additional action difficulty.
+      Improved Intiative:
+        Cost: 1
+        Ranks: 2
+        Decription:
+        Requirments:
+          Skill:
+            Dexterity: 3+
+            Wits: 3+
+            Manipulation: 3+
+        Benefits:
+          Rank 1: When making an initiative roll, increase your success level by one.
+          Rank 2: You may change initiative once per combat for free
+
+

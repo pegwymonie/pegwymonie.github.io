@@ -31,16 +31,6 @@ Combat is segregated into individual rounds. Each round characters may make as m
 (Cost Per)[Total Tiers] Name
 Tier One Description
 
-(1)[2]Military Training
-Ignore up to 2 weapon difficulty when using military or better grade weaponry common in the trained region.
-Ignore up to 2 action difficulty when in immediate danger.
-(1)[3] Two Weapon Fighting
-When making a attack with your primary weapon, you may make additional attack with another held weapon but this increases the action difficulty by 4. This second attack is also made with the increased difficulty.
-The additional action difficulty is increased by 2 instead of 4.
-There is no additional action difficulty.
-(1)[2] Improved Initiative
-When making an initiative roll, increase your success level by one.
-You may change initiative once per combat for free
 (1)[1] Weapon Finesse
 When making a melee attack using a light weapon you may use your dexterity in place of your strength.
 (1)[2] Fast on your Feet
