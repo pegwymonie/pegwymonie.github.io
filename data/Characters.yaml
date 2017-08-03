@@ -62,3 +62,13 @@ Characters:
         EQ: "(w,d,m,p) -> Floor(1 +W + D + M + P)/4"
   Feats:
     Description: Feats represent the individuality of a character, giving flavor beyond basic attributes and skills. Each feat has an associated cost, indicating the power level of the feat. Feats with a hashtag are available only with gm approval.
+  Advancement:
+    Description: As your character completes adventures they will advance in expertise and skill. To represent this you will be awareded Advancment Points. Only feats can be purchased with these points, but other items will advance when you purchase aditional feets.
+    Attributes:
+      Advancment: For every 3 Advancment Points you spend, past the starting allotment, you gain an attribute point to spend.
+    Skills:
+      Advancment: Every time you increase an Attribute, you gain an aditional skill point to spend in that category
+    Level:
+      Description: This system does not have a hard concept of a level, but there is a soft mapping. Starting characters are considered level one. For every 3 Advancement Points spent, you are considered one level higher. If your GM ask you to make a character of X level, make a staritng character and spend an appopriate amount of points.
+    Advancement Points:
+      Description: This represents to amount your character has advanced. These are used to purchase feats, and indicate the overall advancment of your character. Spent advancment points should be tracked, as they indicate your characters over all strength.
