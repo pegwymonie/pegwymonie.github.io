@@ -1,0 +1,36 @@
+{{#unless SubActions}}
+    <div class="descriptions-{{@../../key}}-{{@key}}">
+        <div class="descriptions-title-{{@../../key}}-{{@key}}"><b>{{@key}}:</b></div>
+        <div class="descriptions-body-{{@../../key}}-{{@key}}">
+            {{> descriptionsTextPartial}}
+        </div>
+    </div>
+    <hr>
+{{else}}
+    <div class="descriptions-title-{{@../../key}}-{{@key}}"><b>{{@key}}:</b> {{Description}}</div>
+    <!-- SubActions -->
+    <div class="descriptions-body-{{@../../key}}-{{@key}}">
+      {{#each .}}
+        {{#unless @first}}
+          <div class="row subActions-items">
+            {{#each .}}
+              <div class="col-md-10 subActions-item">
+                  <div class="row subActions-item--heading">
+                      <div class="col-md-6 subActions-item--heading-title">
+                          {{@key}}
+                      </div>
+                      <div class="col-md-6 subActions-item--heading-action-cost">
+                          <span>Action Cost:</span> {{[Action Cost]}}
+                      </div>
+                  </div>
+                  <div class="subActions-item--body">
+                      {{> descriptionsTextPartial}}
+                  </div>
+              </div>
+            {{/each}}
+          </div>
+          <div class="horizontal-rule"></div>
+        {{/unless}}
+      {{/each}}
+    </div>
+{{/unless}}

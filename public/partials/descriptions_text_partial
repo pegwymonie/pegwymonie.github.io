@@ -1,0 +1,111 @@
+{{#if Description}}
+<div class="subActions-item-desc">
+    <span>Description:</span> {{Description}}
+</div>
+{{/if}}
+
+{{#if NoRoll}}
+<div class="subActions-item-noRoll">
+    <span>No Roll:</span> {{[NoRoll]}}
+</div>
+{{/if}}
+
+{{#if Special}}
+<div class="subActions-item-special">
+    <span>Special:</span> {{[Special]}}
+</div>
+{{/if}}
+
+{{#if Difficulty}}
+<div class="subActions-item-difficulty">
+    <span>Difficulty:</span> {{[Difficulty]}}
+</div>
+{{/if}}
+
+{{#if PositiveFactors}}
+<div class="subActions-item-positive">
+    <span>Positive Factors:</span> {{PositiveFactors}}
+</div>
+{{/if}}
+
+{{#if NegativeFactors}}
+<div class="subActions-item-negative">
+    <span>Negative Factors:</span> {{[NegativeFactors]}}
+</div>
+{{/if}}
+
+{{#if OnSuccess}}
+<div class="subActions-item-onSuccess">
+    <span>Success:</span> {{OnSuccess}}
+</div>
+{{/if}}
+
+{{#if OnFailure}}
+<div class="subActions-item-onFailure">
+    <span>Failure:</span> {{OnFailure}}
+</div>
+{{/if}}
+
+{{#if Bonus}}
+<div class="subActions-item-bonus">
+    <span>Bonus:</span>
+    {{#each Bonus}}
+    {{@key}} : {{this}}
+    {{/each}}
+</div>
+{{/if}}
+
+{{#if Benefits}}
+<div class="feats-benefits">
+    <span><b>Benefits:</b></span>
+    {{#each Benefits}}
+      <ul class="types-list-content--no-bullet">
+        <li><b>{{@key}}:</b> {{this}}</li>
+      </ul>
+    {{/each}}
+</div>
+{{/if}}
+
+{{#if Cost}}
+<div class="feats-cost">
+    <span><b>Cost:</b></span> {{Cost}}
+</div>
+{{/if}}
+
+{{#if Ranks}}
+<div class="feats-ranks">
+    <span><b>Ranks:</b></span> {{Ranks}}
+</div>
+{{/if}}
+
+{{#if Requirements}}
+<div class="feats-requirements">
+    <span><b>Requirements:</b></span>
+    {{#each Requirements}}
+      <ul class="types-list-content--no-bullet">
+        <li><span id="feats-requirements-heading"><b>{{@key}}:</b></span> 
+          {{#ifObject this}}
+            {{#each .}}
+              <ul class="types-list-content--no-bullet">
+                <li><span id="feats-requirements-subheading"><b>{{@key}}:</b></span> 
+                  {{#ifObject this}}
+                    {{#each .}}
+                      <ul class="types-list-content--no-bullet">
+                        <li><span id="feats-requirements-item"><b>{{@key}}:</b></span> {{this}}</li>
+                      </ul>
+                    {{/each}}
+                  {{else}}
+                    {{this}}
+                  {{/ifObject }}
+                </li>
+              </ul>
+            {{/each}}
+          {{else}}
+            {{this}}
+          {{/ifObject}}
+        </li>
+      </ul>
+      <!-- {{@key}} : {{this}} -->
+    {{/each}}
+</div>
+{{/if}}

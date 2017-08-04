@@ -1,0 +1,20 @@
+<div class="{{@key}}-notations">
+    <h3 class="{{@key}}-notations-title">
+      <a data-toggle="collapse" class="collapse--a" href="#collapseSystem-{{@key}}-Notations">
+        Notations
+      </a>
+    </h3>
+    <div id="collapseSystem-{{@key}}-Notations" class="collapse">
+        <ul class="notations-list types-list-content--bullet">
+            {{#each Notations}}
+            <li class="notations--list-item"><b>{{@key}}</b> {{#ifString .}}: {{this}} {{/ifString}}
+            </li>
+            <ul class="notations-sublist types-list-content--bullet">
+                {{#each .}}
+                <li class="notations-sublist--list-item"> {{@key}} : {{this}}</li>
+                {{/each}}
+            </ul>
+            {{/each}}
+        </ul>
+    </div>
+</div>

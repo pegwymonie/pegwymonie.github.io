@@ -1,0 +1,40 @@
+<div id="character-info" class="section">
+  <h1 class="section-title">
+    <a class="collapse--a" data-toggle="collapse" href="#collapseCharacter">
+      Character Information
+    </a>
+  </h1>
+  <div id="collapseCharacter" class="collapse in">
+    {{#each Characters}}
+    <div class="section--panel panel panel-primary">
+      <div class="section--panel-heading panel-heading {{@key}}-title">
+        <a class="collapse--a" data-toggle="collapse" href="#collapseCharacter-{{@key}}">{{@key}}</a>
+      </div>
+      <div id="collapseCharacter-{{@key}}" class="collapse section--panel-body panel-body  {{@key}}-content">
+        <p class="section-desc">{{Description}}</p>
+        <ul class="types-list">
+          <div class="row">
+            {{#each Types}}
+            <div class="col-md-2 types-list-item">
+              <div class="types-list-title">{{@key}}</div>
+              {{#ifArray .}}
+                <ul class="types-list-content--bullet">
+                  {{#each .}}
+                    <li>{{this}}</li>
+                  {{/each}}
+              {{else}}
+                <ul class="types-list-content--no-bullet">
+                  {{#each .}}
+                    <li><b>{{@key}} :</b> {{this}}</li>
+                  {{/each}}
+              {{/ifArray}}
+                </ul>
+            </div>
+            {{/each}}
+          </div>
+        </ul>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

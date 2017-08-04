@@ -2,274 +2,32 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
 
-
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 <!-- local assets-->
-<script src="templateEngine.js"></script>
-<script src="deepMerge.js"></script>
-<link rel="stylesheet" type="text/css" href="./main.css">
-<link rel="shortcut icon" href="./favicon.ico" type="image/icon" >
+<script src="./public/assets/scripts/templateEngine.js"></script>
+<script src="./public/assets/scripts/deepMerge.js"></script>
+<link rel="stylesheet" type="text/css" href="./public/assets/css/main.css">
+<link rel="shortcut icon" href="./public/assets/images/favicon.ico" type="image/icon" >
 
 <script id="template" type="text/x-handlebars-template">
-    <div id="character-info" class="section">
-        <h1 class="section-title"><a class="collapse--a" data-toggle="collapse" href="#collapseCharacter">Character Information</a></h1>
-        <div id="collapseCharacter" class="collapse in">
-            {{#each Characters}}
-            <div class="section--panel panel panel-primary">
-                <div class="section--panel-heading panel-heading {{@key}}-title">
-                  <a class="collapse--a" data-toggle="collapse" href="#collapseCharacter-{{@key}}">{{@key}}</a>
-                </div>
-                <div id="collapseCharacter-{{@key}}" class="collapse section--panel-body panel-body  {{@key}}-content">
-                    <p class="section-desc">{{Description}}</p>
-                    <ul class="types-list">
-                        <div class="row">
-                            {{#each Types}}
-                            <div class="col-md-2 types-list-item">
-                                <div class="types-list-title">{{@key}}</div>
-                                {{#ifArray .}}
-                                <ul class="types-list-content--bullet">
-                                    {{#each .}}
-                                    <li> {{this}}</li>
-                                    {{/each}}
-                                    {{else}}
-                                    <ul class="types-list-content--no-bullet">
-                                        {{#each .}}
-                                        <li><b>{{@key}} :</b> {{this}}</li>
-                                        {{/each}}
-                                        {{/ifArray}}
-                                    </ul>
-                            </div>
-                            {{/each}}
-                        </div>
-                    </ul>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </div>
+    
+    {{#> characterPartial}}
+      <div class="text-center">Character Info is supposed to go here.</div>
+    {{/ characterPartial}}
 
-    <!-- System -->
-    <div id="system" class="section">
-        <h1 class="section-title"><a class="collapse--a" data-toggle="collapse" href="#collapseSystem">System</a></h1>
-        <div id="collapseSystem" class="collapse in">
-            {{#each System as |system systemIndex|}}
-            <div class="section--panel panel panel-primary">
-                <div class="section--panel-heading panel-heading"><a class="collapse--a" data-toggle="collapse"
-                                                                     href="#collapseSystem-{{systemIndex}}{{@key}}">{{@key}}</a></div>
-                <div id="collapseSystem-{{systemIndex}}{{@key}}" class=" collapse in section--panel-body panel-body">
-                    <p class="section-desc">{{Description}}</p>
-                    <ul class="types-list">
-                        <div class="row">
-                            {{#each Types}}
-                            <div class="col-md-3 types-list-item">
-                                <div class="action-{{@key}} types-list-title">{{@key}}</div>
-                                <ul class="types-list">
-                                    {{#each Types}}
-                                    <li class="types-list-item"> {{this}}</li>
-                                    {{/each}}
-                                </ul>
-                            </div>
-                            {{/each}}
-                        </div>
-                    </ul>
+    {{#> systemPartial}}
+      <div class="text-center">System Info, Actions is supposed to go here.</div>
+    {{/ systemPartial}}
 
-                    <!-- Notations -->
-                    <div class="notations">
-                        <h3 class="notations-title"><a data-toggle="collapse" class="collapse--a"
-                                                       href="#collapseSystem-{{systemIndex}}Notations">Notations</a></h3>
-                        <div id="collapseSystem-{{systemIndex}}Notations" class="collapse">
-                            <ul class="notations-list types-list-content--bullet">
-                                {{#each Notations}}
-                                <li class="notations--list-item"><b>{{@key}}</b> {{#ifString .}}: {{this}} {{/ifString}}
-                                </li>
-                                <ul class="notations-sublist types-list-content--bullet">
-                                    {{#each .}}
-                                    <li class="notations-sublist--list-item"> {{@key}} : {{this}}</li>
-                                    {{/each}}
-                                </ul>
-                                {{/each}}
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Actions Descriptions -->
-                    <div class="descriptions-actions">
-                        <h3 class="descriptions-title">
-                            <a data-toggle="collapse" class="collapse--a" href="#collapseSystem-{{systemIndex}}Descriptions">
-                                Descriptions
-                            </a>
-                        </h3>
-                        <div id="collapseSystem-{{systemIndex}}Descriptions" class="collapse in">
-                            <ul class="types-list-content--bullet">
-                                {{#each Descriptions}}
-                                {{#unless SubActions}}
-                                <div class="desc-actions">
-                                    <div class="desc-action-title-{{@key}}"><b>{{@key}}:</b></div>
-                                    <div class="desc-action-{{@key}}-body">
-                                        {{#if Description}}
-                                        <div class="subActions-item-desc">
-                                            <span>Description:</span> {{Description}}
-                                        </div>
-                                        {{/if}}
-
-                                        {{#if NoRoll}}
-                                        <div class="subActions-item-noRoll">
-                                            <span>No Roll:</span> {{[NoRoll]}}
-                                        </div>
-                                        {{/if}}
-
-                                        {{#if Special}}
-                                        <div class="subActions-item-special">
-                                            <span>Special:</span> {{[Special]}}
-                                        </div>
-                                        {{/if}}
-
-                                        {{#if Difficulty}}
-                                        <div class="subActions-item-difficulty">
-                                            <span>Difficulty:</span> {{[Difficulty]}}
-                                        </div>
-                                        {{/if}}
-
-                                        {{#if PositiveFactors}}
-                                        <div class="subActions-item-positive">
-                                            <span>Positive Factors:</span> {{PositiveFactors}}
-                                        </div>
-                                        {{/if}}
-
-                                        {{#if NegativeFactors}}
-                                        <div class="subActions-item-negative">
-                                            <span>Negative Factors:</span> {{[NegativeFactors]}}
-                                        </div>
-                                        {{/if}}
-
-                                        {{#if OnSuccess}}
-                                        <div class="subActions-item-onSuccess">
-                                            <span>Success:</span> {{OnSuccess}}
-                                        </div>
-                                        {{/if}}
-
-                                        {{#if OnFailure}}
-                                        <div class="subActions-item-onFailure">
-                                            <span>Failure:</span> {{OnFailure}}
-                                        </div>
-                                        {{/if}}
-
-                                        {{#if Bonus}}
-                                        <div class="subActions-item-bonus">
-                                            <span>Bonus:</span>
-                                            {{#each Bonus}}
-                                            {{@key}} : {{this}}
-                                            {{/each}}
-                                        </div>
-                                        {{/if}}
-                                    </div>
-                                </div>
-                                <hr>
-                                {{else}}
-                                <div class="subAction-{{@key}}"><b>{{@key}}:</b> {{Description}}</div>
-                                <!-- SubActions -->
-                                <div class="subActions">
-                                    {{#each .}}
-                                    {{#unless @first}}
-                                    <div class="row subActions-items">
-                                        {{#each .}}
-                                        <!-- subAction -->
-                                        <div class="col-md-10 subActions-item">
-                                            <div class="row subActions-item--heading">
-                                                <div class="col-md-6 subActions-item--heading-title">
-                                                    {{@key}}<!-- Melee Atk -->
-                                                </div>
-                                                <div class="col-md-6 subActions-item--heading-action-cost">
-                                                    <span>Action Cost:</span> {{[Action Cost]}}
-                                                </div>
-                                            </div>
-                                            <div class="subActions-item--body">
-
-                                                {{#if Description}}
-                                                <div class="subActions-item-desc">
-                                                    <span>Description:</span> {{Description}}
-                                                </div>
-                                                {{/if}}
-
-                                                {{#if NoRoll}}
-                                                <div class="subActions-item-noRoll">
-                                                    <span>No Roll:</span> {{[NoRoll]}}
-                                                </div>
-                                                {{/if}}
-
-                                                {{#if Special}}
-                                                <div class="subActions-item-special">
-                                                    <span>Special:</span> {{[Special]}}
-                                                </div>
-                                                {{/if}}
-
-                                                {{#if Difficulty}}
-                                                <div class="subActions-item-difficulty">
-                                                    <span>Difficulty:</span> {{[Difficulty]}}
-                                                </div>
-                                                {{/if}}
-
-                                                {{#if PositiveFactors}}
-                                                <div class="subActions-item-positive">
-                                                    <span>Positive Factors:</span> {{PositiveFactors}}
-                                                </div>
-                                                {{/if}}
-
-                                                {{#if NegativeFactors}}
-                                                <div class="subActions-item-negative">
-                                                    <span>Negative Factors:</span> {{[NegativeFactors]}}
-                                                </div>
-                                                {{/if}}
-
-                                                {{#if OnSuccess}}
-                                                <div class="subActions-item-onSuccess">
-                                                    <span>Success:</span> {{OnSuccess}}
-                                                </div>
-                                                {{/if}}
-
-                                                {{#if OnFailure}}
-                                                <div class="subActions-item-onFailure">
-                                                    <span>Failure:</span> {{OnFailure}}
-                                                </div>
-                                                {{/if}}
-
-                                                {{#if Bonus}}
-                                                <div class="subActions-item-bonus">
-                                                    <span>Bonus:</span>
-                                                    {{#each Bonus}}
-                                                    {{@key}} : {{this}}
-                                                    {{/each}}
-                                                </div>
-                                                {{/if}}
-                                            </div>
-                                        </div>
-                                        <!-- subAction end -->
-                                        {{/each}}
-                                    </div>
-                                    <div class="horizontal-rule"></div>
-                                    {{/unless}}
-                                    {{/each}}
-                                </div>
-                                {{/unless}}
-                                {{/each}}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </div>
 </script>
 
 <div id="target"></div>
-<script src="main.js"></script>
+<script src="./public/assets/scripts/main.js"></script>
