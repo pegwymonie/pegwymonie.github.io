@@ -31,32 +31,7 @@ Combat is segregated into individual rounds. Each round characters may make as m
 (Cost Per)[Total Tiers] Name
 Tier One Description
 
-(1)[1] Weapon Finesse
-When making a melee attack using a light weapon you may use your dexterity in place of your strength.
-(1)[2] Fast on your Feet
-Increase your speed by 2.
-When Running, add an additional 3 degrees of success to your roll.
-(1)[2] Quick Switch
-You may draw a weapon as part of a walk or jog action.
-You may sheath and draw a weapon anytime you could draw a weapon.
-(1)[3] Improved <T [Physical | Mental | Social]> Defense
-When Opposing a T attack, increase your degree of success by one.
-You may Oppose one T attack for free per round.
-When Opposing a T attack, your minimum degree of success is two regardless of actual roll.
-(1)[*] Action Focus <N Non Attack Action>
-When performing the selected action, you ignore up to 2 action difficulty. If the action is opposed you always win on ties, unless they also possess Action Focus.
-(1)[1] Improved Constitution
-When opposing a Biological agents Infection, or Symptom actions, increase your degree of success by one. Your minimum degree of success is two, regardless of the actual roll.
-(1)[1] Direction Sense
-You always know north. You ignore up to 2 action difficulty when attempting to navigate terrain you have seen a map for.
-(1)[1] Brute Defense
-You may use your Strength in place of your Dexterity when dodging.
-(1)[2] Fighting Style <W Weapon>
-When making an attack using W, you may ignore up to 2 action difficulty.
-When being opposing when making an attack using W, you may apply 2 action difficulty to the defenders action.
-(1)[2] Parry
-When wielding a melee weapon, you may use it to parry incoming melee attacks.
-You may now parry incoming throw weapon attacks.
+
 
 
 

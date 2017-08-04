@@ -68,5 +68,98 @@ System:
         Benefits:
           Rank 1: When making an initiative roll, increase your success level by one.
           Rank 2: You may change initiative once per combat for free
-
-
+      Weapon Finesse:
+        Cost: 1
+        Ranks: 1
+        Description:
+        Requirements:
+          Skill:
+            All:
+              Dexiterity: 3+
+        Benefits:
+          Rank 1: When making a melee attack using a light weapon you may use your dexterity in place of your strength.
+      Fast on your Feet:
+        Cost: 1
+        Ranks: 2
+        Description:
+        Requirements:
+          Attribute:
+            All:
+              Physcial: 6+
+        Benifiets:
+          Rank 1: Increase your speed by 2.
+          Rank 2: When Running, add an additional 3 degrees of success to your roll.
+      Quick Switch:
+        Cost: 1
+        Ranks: 2
+        Description:
+        Requirments:
+          Attribute:
+            All:
+              Physcial: 6+
+        Benifiets:
+          Rank 1: You may draw a weapon as part of a walk or jog action.
+          Rank 2: You may sheath and draw a weapon as part of the same action/subaction.
+      Improved Defense:
+        Cost: 1
+        Ranks: 3
+        Description:
+        Requirements:
+          Types:
+            Defence: Physcial, Mental, Social
+        Benifiets:
+          Rank 1: When Opposing a attack targetting the chosen defense type, increase your degree of success by one.
+          Rank 2: You may Oppose one attack targetting the chosen defense type for free per round.
+          Rank 3: When you Oppose an attack targetting the chosen defense type, your minimum degree of success is two regardless of actual roll.
+      Skill Focus:
+        Cost: 2
+        Ranks: 1
+        Description:
+        Requirements:
+          Types:
+            Action: See Skill;
+          Skill:
+            All:
+              Type: 4+
+        Benifiets:
+          Rank 1: When an action that utilized the selected skill type, you ignore up to 2 action difficulty. If the action is opposed you always win on ties, unless they also possess Action Focus.
+        Special: This does not apply to any attack actions.
+      Direction Sense:
+        Cost: 1
+        Ranks: 2
+        Description:
+        Requirments:
+          Other:
+            - Training on how to read map.
+        Benifiets:
+          Rank 1:  You always know north. You ignore up to 2 action difficulty when attempting to navigate terrain you have seen a map for.
+      Brute Defense:
+        Cost: 1
+        Ranks: 1
+        Description:
+        Requirements:
+          Types:
+            Defence: Physcial, Mental, Social
+        Benifiets:
+          Rank 1: You may use the power(Strength, Inteligence, Presence) attribute in place of the finese attribute when an attack targets the chosen defense.
+      Fighting Style:
+        Cost: 1
+        Ranks: 2
+        Description:
+        Requirments:
+          Types:
+            Weapon Group: Short Swords, Long Swords, Bows, Polearms, Unarmed, etc.
+        Benifiets:
+          Rank 1: When making an attack using the chosen weapon type, you may ignore up to 2 action difficulty.
+          Rank 2: When having an attack using the chosen weapon type opposed, you may increase the defenders action difficulty by 2.
+      Parry:
+        Cost: 1
+        Ranks: 2
+        Description:
+        Requirements:
+          Attributes:
+            All:
+              Dexterity: 3+
+        Benifiets:
+          Rank 1: When wielding a melee weapon, you may use it to parry incoming melee attacks.
+          Rank 2: You may now parry incoming throw weapon attacks.
