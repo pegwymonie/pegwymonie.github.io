@@ -1,7 +1,9 @@
 window.onload = function () {
-  const PUBLIC_DIR   = "./public";
-  const PARTIALS_DIR = PUBLIC_DIR + "/partials";
-  const DATA_DIR     = PUBLIC_DIR + "/data";
+  const PUBLIC_DIR                  = "./public";
+  const PARTIALS_DIR                = PUBLIC_DIR + "/partials";
+  const DATA_DIR                    = PUBLIC_DIR + "/data";
+  const CHARACTER_INFO_PARTIALS_DIR = PARTIALS_DIR + "/character-info";
+  const SYSTEM_PARTIALS_DIR         = PARTIALS_DIR +"/system";
 
   //Grab the inline template
   var template = document.getElementById('template').innerHTML;
@@ -12,7 +14,9 @@ window.onload = function () {
   });
 
   Handlebars.registerHelper('ifString', function (object, options) {
-    if (Object.prototype.toString.call(object) === "[object String]") {return options.fn(this)}
+    if (Object.prototype.toString.call(object) === "[object String]") {
+      return options.fn(this)
+    }
     return options.inverse(this)
   });
 
@@ -53,16 +57,22 @@ window.onload = function () {
     } else {
         return options.inverse(this);
     }
+  });
 
-});
+  Handlebars.registerHelper('replace', function(value, options) {
+    var previousValue = value.toString();
+    var regex = options.hash.toReplace || " ";
+    var replacement = options.hash.replacement || "-";
+    return value.replace(regex, replacement);
+  });
 
   Handlebars.registerHelper('json', function(context) {
     return JSON.stringify(context);
-});
+  });
 
-   var getPartial = (partialName, file) => {
+   var getPartial = (partialName, url) => {
       $.ajax({
-          url: PARTIALS_DIR + "/" + file,
+          url: url,
           dataType: 'html',
           async: false,
           success: function(html) {
@@ -71,15 +81,33 @@ window.onload = function () {
       });        
     }
 
-  /*Partials*/
-    getPartial("descriptionsTextPartial", "descriptions_text_partial");
-    getPartial("characterPartial", "characterInfo_partial");
-    getPartial("systemPartial", "system_partial");
-    getPartial("systemActionPartial", "system_action_partial");
-    getPartial("systemActionTypesPartial", "system_action_types_partial");
-    getPartial("systemNotationsPartial", "system_notations_partial");
-    getPartial("systemDescriptionsPartial", "system_descriptions_partial");
-    getPartial("systemFeatsPartial", "system_feats_partial");
+    var getCharacterInfoPartial = (partialName, file) => {
+      getPartial(partialName, CHARACTER_INFO_PARTIALS_DIR + "/" + file);
+    }
+
+    var getSystemPartial = (partialName, file) => {
+      getPartial(partialName, SYSTEM_PARTIALS_DIR + "/" + file);
+    }
+
+    var getRootPartial = (partialName, file) => {
+      getPartial(partialName, PARTIALS_DIR + "/" + file);
+    }
+
+  /* Partials */
+
+    /* Character Info Partials */
+    getCharacterInfoPartial("characterPartial", "characterInfo_partial");
+    getCharacterInfoPartial("typeListPartial", "characterInfo_TypeList_partial");
+    getCharacterInfoPartial("advancementPartial", "characterInfo_advancement_partial");
+
+    /* System Partials */
+    getSystemPartial("systemPartial", "system_partial");
+    getSystemPartial("systemActionPartial", "system_action_partial");
+    getSystemPartial("systemActionTypesPartial", "system_action_types_partial");
+    getSystemPartial("systemNotationsPartial", "system_notations_partial");
+    getSystemPartial("systemDescriptionsPartial", "system_descriptions_partial");
+    getSystemPartial("systemFeatsPartial", "system_feats_partial");
+    getSystemPartial("descriptionsTextPartial", "descriptions_text_partial");
 
   var cacheBuster = "?" + Date.now()
 

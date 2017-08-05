@@ -4,7 +4,7 @@
             Descriptions
         </a>
     </h3>
-    <div id="collapseSystem-{{@key}}-Descriptions" class="collapse in">
+    <div id="collapseSystem-{{@key}}-Descriptions" class="collapse">
         <ul class="types-list-content--bullet">
             {{#each Descriptions}}
               {{#equal @../key 'Actions'}}

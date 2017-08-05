@@ -1,6 +1,5 @@
 <ul class="types-list">
   <div class="row">
-      
         {{#each Types}}
         <div class="col-md-3 types-list-item">
             <div class="action-{{@key}} types-list-title">{{@key}}</div>

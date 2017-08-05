@@ -1,0 +1,10 @@
+{{#compare @key 'Description' operator="!="}}
+	<div class="characterInfo-advancement-{{@key}}">
+		<p>
+			<b>{{@key}}:</b>
+			{{#each .}}
+				{{this}}
+			{{/each}}
+		</p>
+	</div>
+{{/compare}}
