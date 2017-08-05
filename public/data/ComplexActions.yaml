@@ -319,6 +319,7 @@ System:
         SubActions:
           Physcial:
             Difficulty: 0
+            Action Cost: All
             PositiveFactors:
               - Physcial
               - Dexterity
@@ -326,6 +327,7 @@ System:
             OnSuccess: 'You perform the action unnoticed.'
           Social:
             Difficulty: 0
+            Action Cost: All
             PositiveFactors:
               - Social
               - Manipulation
@@ -333,6 +335,7 @@ System:
             OnSuccess: 'You perform the action unnoticed.'
           Physcial(Quick):
             Difficulty: 2
+            Action Cost: 1
             PositiveFactors:
               - Physcial
               - Dexterity
@@ -340,6 +343,7 @@ System:
             OnSuccess: 'Peform the selected action as part of this action, its difficulty is increased by 2.'
           Social(Quick):
             Difficulty: 2
+            Action Cost: 1
             PositiveFactors:
               - Social
               - Manipulation
