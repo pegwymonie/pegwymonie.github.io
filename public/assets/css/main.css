@@ -25,6 +25,7 @@ body {
 }
 
 h3[class$="descriptions-title"] .collapse--a,
+h3[class^="characterInfo-advancement-title-"] .collapse--a,
 h3[class$="notations-title"] .collapse--a {
 	color: black !important;
 }
@@ -86,8 +87,6 @@ h3[class$="notations-title"] .collapse--a {
 }
 
 div[class^="action-"],
-div[class^="subAction-"],
-div[class^="desc-action-title-"],
 div[class^="descriptions-title-"],
 .Skills-content .types-list-title,
 .Derived-Attributes-content .types-list-title {
@@ -111,7 +110,8 @@ div[class^="descriptions-title-"] {
 }
 
 h3[class$="descriptions-title"],
-h3[class$="notations-title"] {
+h3[class$="notations-title"],
+h3[class^="characterInfo-advancement-title-"] {
 	text-align: center;
 	background-color: #70a1cc;
 	color: black;

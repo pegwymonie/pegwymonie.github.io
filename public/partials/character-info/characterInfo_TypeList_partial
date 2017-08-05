@@ -1,0 +1,21 @@
+<ul class="types-list">
+  <div class="row">
+    {{#each .}}
+    <div class="col-md-2 types-list-item">
+      <div class="types-list-title">{{@key}}</div>
+      {{#ifArray .}}
+        <ul class="types-list-content--bullet">
+          {{#each .}}
+            <li>{{this}}</li>
+          {{/each}}
+      {{else}}
+        <ul class="types-list-content--no-bullet">
+          {{#each .}}
+            <li><b>{{@key}} :</b> {{this}}</li>
+          {{/each}}
+      {{/ifArray}}
+        </ul>
+    </div>
+    {{/each}}
+  </div>
+</ul>

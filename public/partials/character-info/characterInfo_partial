@@ -1,0 +1,36 @@
+<div id="character-info" class="section">
+  <h1 class="section-title">
+    <a class="collapse--a" data-toggle="collapse" href="#collapseCharacter">
+      Character Information
+    </a>
+  </h1>
+  <div id="collapseCharacter" class="collapse in">
+    {{#each Characters as |character c|}}
+    <div class="section--panel panel panel-primary">
+      <div class="section--panel-heading panel-heading {{@key}}-title">
+        <a class="collapse--a" data-toggle="collapse" href="#collapseCharacter-{{@key}}">{{@key}}</a>
+      </div>
+      <div id="collapseCharacter-{{@key}}" class="collapse section--panel-body panel-body  {{@key}}-content">
+      {{#each .}} 
+        {{#equal @key 'Description'}}
+          <p class="section-desc">{{this}}</p>
+        {{/equal}}
+        
+        {{#compare @index 1 operator="=="}}<hr>{{/compare}}
+        {{#equal @key 'Types'}}
+          {{#> typeListPartial this}}
+            Type List partial is supposed to go here.
+          {{/ typeListPartial}}
+        {{/equal}}
+
+        {{#equal c 'Advancement'}}
+          {{#> advancementPartial}}
+            Advancement data is supposed to go here.
+          {{/ advancementPartial}}
+        {{/equal}}
+      {{/each}}       
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
