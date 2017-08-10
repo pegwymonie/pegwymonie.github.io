@@ -1,3 +1,5 @@
+/*global phantom*/
+
 var page = require('webpage').create();
 var success = true
 

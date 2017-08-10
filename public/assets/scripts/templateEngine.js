@@ -1,3 +1,10 @@
+// Global Defs. Wanted by cloud9
+/*global Handlebars*/
+/*global YAML*/
+/*global $*/
+/*global deepmerge*/
+
+
 window.onload = function () {
   const PUBLIC_DIR                  = "./public";
   const PARTIALS_DIR                = PUBLIC_DIR + "/partials";
@@ -118,8 +125,10 @@ window.onload = function () {
   let actionData        = YAML.load( DATA_DIR + '/ComplexActions.yaml' + cacheBuster);
   let simpleActionData  = YAML.load( DATA_DIR + '/SimpleActions.yaml' + cacheBuster);
   let featData          = YAML.load( DATA_DIR + '/Feats.yaml' + cacheBuster);
+  let weaponData        = YAML.load( DATA_DIR + '/Weapons.yaml' + cacheBuster);
 
-  var data = deepmerge.all([characterData, systemData, actionData, simpleActionData, featData]);
+
+  var data = deepmerge.all([characterData, systemData, actionData, simpleActionData, featData, weaponData]);
   //console.log(Handlebars.partials);
   console.log(data);
   //console.log(Handlebars.partials)

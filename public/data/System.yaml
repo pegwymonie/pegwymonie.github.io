@@ -69,3 +69,5 @@ System:
           - Modify Initiative
           - Aid Other
           - Ready Action
+  Equipment:
+    Description: Equipment enhances your characters abilities, and allows them to perform better at the actions the equipment is designed to support.
