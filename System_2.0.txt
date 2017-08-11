@@ -1,22 +1,4 @@
 
-Mental Actions:
-	First Aid[2]:
-		(Mental, Intelligence) ->
-OnSuccess: You may end a number of ongoing non magical negative effects equal to your degrees of success.
-				Bonus: For every 3 degrees of success you may convert a lethal damage to a non-lethal damage
-				OnFailure: Add one turn to each on going non magical negative effect. For every 3 degrees of failure, cause target to Bleed(1) for 3 turns.
-Long Term Care(1 Hour):
-	(Mental, Intelligence) ->
-OnSuccess: You increase double the rate at which the target heals.
-				Bonus: Double the rate for every 3 degrees of success
-				OnFailure: For every degrees of failure, undo any wound tending bonus. For every 3 degrees of failure, inflict an additional point of damage.
-Treat Wounds:
-	(Mental, Intelligence) -> OnSuccess: Treat a number of wounds equal to your degree of success. Treated wound heal at twice the rate.
-Treat Poison:
-
-Safe Channel:[2(Before), Degree of Success(After)]
-	(Mental, Resolve)  -> OnSuccess: Your next, or previous action in this turn, costs no focus.
-
 Action Points are a measure of your characters ability to act under pressure. Characters generally start with the maximum amount of action point, and generally regain all points at the end of a round. As a rule of thumb,  action point is to be spent every time the dice are rolled, feats can modify this.
 To Resolve an action first determine the action success threshold. This is done by adding all relevant attributes or skills, and subtracting any penalty attributes or skills. Next determine if the action is Opposed or Unopposed, resolve the action accordingly.
 Opposed Actions have an aggressor, and a defender. Typically the aggressor is the initiator of the action, though feats may modify this. Each side makes a separate roll, marking their level of success. The “winner” is the one with the highest degree of success. For determining winning outcome, subtract the winning success by the defending success, if any. Since opposed actions require two rolls, each side will have to spend an action point.
@@ -28,13 +10,26 @@ Combat is segregated into individual rounds. Each round characters may make as m
 
 
 
-(Cost Per)[Total Tiers] Name
-Tier One Description
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Safe Channel:[2(Before), Degree of Success(After)]
+	(Mental, Resolve)  -> OnSuccess: Your next, or previous action in this turn, costs no focus.
 
 Magic System:
 
