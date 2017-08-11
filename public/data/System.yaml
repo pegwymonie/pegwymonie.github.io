@@ -69,3 +69,14 @@ System:
           - Modify Initiative
           - Aid Other
           - Ready Action
+  Time Resolution:
+    Combat:
+      Description: Combat is segregated into individual rounds. Each round characters may make as many actions as the action point pool allows them. Initiative determines who acts first in a round. Each character makes a free initiative roll, unless surprised, and reports their level of success. This determines their place in the turn order, ties are won by the lower roller.
+      Action Points: Actions points are used to denote how much a character can do in any one round. Each action costs a number of points which must all be spent before the action occurs. In general each characters action point pool refils at the top of the round. As a rule of thumb,  action point is to be spent every time the dice are rolled, feats can modify this.
+    Free Play:
+      Description: When there is no need for the regimented order of combat there is free play. For Roleplay focused games this will be the general mode of play. In this mode actions are resolved as they are announced, with no general order or limit to the amount of actions. When a conflic in ordering does arise the GM may determine who's action takes precidence, prefering those with a higher initative.
+  Action Resolution:
+    Description: Actions are typicaly resolved with a dice roll, 2d8 for most actions. When rolling lower numbers arr better, with snake eyes(Double Ones) being the best possible result. When resolving an action you must meet or roll under your threshold for the action to be successful. If your roll is under your threshold, the performed action might perform better than expected. This difference is refered to as degrees of success, it denotes how well you accomplished a task.
+    Opposed Actions: The defender resolves their action; if successful, it applies a penatly of two plus the degrees of success to the orignal action. A failed opposed action does not provide a bonus to the attacker. Resolve the rest of the action as below.
+    Unopposed Actions: Determine your overall threshold of success ofr the action, include all negative and positve factors as well as any external factors. Postive factors raise your threshold, negative one reduce it. The starting threshold for any action is 2.
+    Threshold Calculation Example: 2 + Postive Factors(Attrbiute + Skill) - Negative Factors(Action Difficulty, Defender Penalty)
