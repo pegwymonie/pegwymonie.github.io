@@ -18,7 +18,6 @@
 <link rel="shortcut icon" href="./public/assets/images/favicon.ico" type="image/icon" >
 
 <script id="template" type="text/x-handlebars-template">
-    
     {{#> characterPartial}}
       <div class="text-center">Character Info is supposed to go here.</div>
     {{/ characterPartial}}
@@ -26,6 +25,12 @@
     {{#> systemPartial}}
       <div class="text-center">System Info, Actions is supposed to go here.</div>
     {{/ systemPartial}}
+
+<div id="table-of-contents" class="side-bar left">
+  {{#> tableOfContentsPartial}}
+      <div class="text-center">tableOfContentsPartial is supposed to go here.</div>
+  {{/tableOfContentsPartial}}
+</div>
 
 </script>
 

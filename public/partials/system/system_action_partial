@@ -5,7 +5,6 @@
             {{> descriptionsTextPartial}}
         </div>
     </div>
-    <hr>
 {{else}}
     <div class="descriptions-title-{{@../../key}}-{{@key}}"><b>{{@key}}:</b> {{Description}}</div>
     <!-- SubActions -->

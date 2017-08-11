@@ -49,9 +49,11 @@
 {{#if Bonus}}
 <div class="subActions-item-bonus">
     <span>Bonus:</span>
-    {{#each Bonus}}
-    {{@key}} : {{this}}
-    {{/each}}
+    <ul>
+      {{#each Bonus}}
+        <li><b>{{@key}}:</b> {{this}}</li>
+      {{/each}}
+    </ul>
 </div>
 {{/if}}
 

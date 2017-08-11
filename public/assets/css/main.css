@@ -2,8 +2,19 @@ body {
 	background-color: #d9edf7;
 }
 
+hr {
+	border-color: #337ab7 !important;
+}
+
+#target {
+	width: 75%;
+	margin: 0 auto;
+}
+
 .section {
 	margin: 20px;
+	background-color: white;
+	padding-bottom: 20px;
 }
 
 .section-title {
@@ -43,7 +54,9 @@ h3[class$="notations-title"] .collapse--a {
 	text-align: center;
 }
 
-.section--panel-body {}
+.section--panel-body {
+	background-color: #d9edf7;
+}
 
 .section-desc {}
 
@@ -104,6 +117,10 @@ div[class^="descriptions-title-"] {
 	list-style-type: bullet;
 }
 
+.list-no-bullet {
+	list-style-type:none;
+}
+
 .types-list-content--no-bullet {
 	list-style-type: none;
 	padding-left: 10px;
@@ -136,6 +153,7 @@ h3[class^="characterInfo-advancement-title-"] {
 	margin-right: 0;
 }
 
+div[class$="-system-Equipment-title"],
 .subActions-item--heading {
 	padding: 5px;
 	border-bottom: 1px solid black;
@@ -143,10 +161,12 @@ h3[class^="characterInfo-advancement-title-"] {
 	color: white;
 }
 
+div[class$="-system-Equipment-title"],
 .subActions-item--heading-title {
 	font-weight: bold;
 }
 
+.Equipment-heading-right,
 .subActions-item--heading-action-cost {
 	text-align: right;
 	font-weight: bold;
@@ -210,3 +230,37 @@ h3[class^="characterInfo-advancement-title-"] {
 	margin-bottom: 0;
 }
 
+.types-list {
+	background-color: white;
+	padding-left: 0;
+}
+
+.types-list .types-list-item .types-list {
+	padding-left: 40px;
+}
+
+.Skills-content .types-list {
+	background-color: transparent;
+}
+
+.Skills-content .types-list-content--bullet {
+	background-color: white;
+}
+
+.side-bar.right {
+	position:absolute;
+  right:0; top:20px; bottom: 20px;
+}
+
+.side-bar.left {
+	position:absolute;
+  left:0; top:20px; bottom: 20px;
+}
+
+.side-bar {
+	width:12.5%;
+	background: #235580;
+	color: white;
+	padding: 15px;
+	border-radius: 3px;
+}

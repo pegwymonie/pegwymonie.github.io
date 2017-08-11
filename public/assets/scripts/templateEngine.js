@@ -102,6 +102,9 @@ window.onload = function () {
 
   /* Partials */
 
+    /* Root Partials*/
+    getRootPartial("tableOfContentsPartial", "table_of_contents_partial");
+
     /* Character Info Partials */
     getCharacterInfoPartial("characterPartial", "characterInfo_partial");
     getCharacterInfoPartial("typeListPartial", "characterInfo_TypeList_partial");
@@ -115,6 +118,7 @@ window.onload = function () {
     getSystemPartial("systemDescriptionsPartial", "system_descriptions_partial");
     getSystemPartial("systemFeatsPartial", "system_feats_partial");
     getSystemPartial("descriptionsTextPartial", "descriptions_text_partial");
+    getSystemPartial("systemEquipmentPartial", "system_equipment_partial");
 
   var cacheBuster = "?" + Date.now()
 

@@ -11,7 +11,28 @@
             </li>
             <ul class="notations-sublist types-list-content--bullet">
                 {{#each .}}
-                <li class="notations-sublist--list-item"> {{@key}} : {{this}}</li>
+                <li class="notations-sublist--list-item"><b>{{@key}}:</b> {{#ifString .}} {{this}} {{/ifString}}
+                    {{#ifObject .}}
+                        <ul class="notations-sublist--list-item-inner-list">
+                            {{#each .}}
+                                <li><b>{{@key}}:</b> {{#ifString .}}{{this}}{{/ifString}} 
+                                    <ul>
+                                    {{#ifArray .}}
+                                        {{#each .}}
+                                            <li>{{this}}</li>
+                                        {{/each}}
+                                    {{/ifArray}}
+                                    {{#ifObject .}}
+                                        {{#each .}}
+                                            <li><b>{{@key}}:</b> {{this}}</li>
+                                        {{/each}}
+                                    {{/ifObject}}
+                                    </ul>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    {{/ifObject}}
+                </li>
                 {{/each}}
             </ul>
             {{/each}}
