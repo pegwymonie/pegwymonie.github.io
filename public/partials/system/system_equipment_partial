@@ -1,0 +1,48 @@
+<div id="system-wrapper-{{@../../key}}-{{@key}}">
+	<div class="row {{@key}}-system-{{@../../key}}-title">
+		<div class="col-md-6">
+        <b>{{@key}}</b>
+    </div>
+    <div class="col-md-6 Equipment-heading-right">
+      <span>Difficulty:</span> {{[Difficulty]}}
+	  </div>
+	</div>
+	<div class="system-{{@../../key}}-{{@key}}-body">
+		{{#each .}}
+			{{#compare @key 'Difficulty' operator='!='}}
+				{{#ifObject .}}
+					<b>{{@key}}:</b> 
+					<ul>
+						{{#each .}}
+						<li>
+							<b>{{@key}}:</b> 
+							{{#ifObject .}}
+								<ul>
+									{{#each .}}
+									<li>
+										<b>{{@key}}:</b> 
+										{{#ifArray .}}
+											<ul>
+												{{#each .}}
+													<li>{{this}}</li>
+												{{/each}}
+											</ul>
+										{{else}}
+											{{this}}
+										{{/ifArray}}
+									</li>
+									{{/each}}
+								</ul>
+							{{else}}
+								{{this}}
+							{{/ifObject}}
+						</li>
+						{{/each}}
+					</ul>
+				{{else}}	
+					<b>{{@key}}:</b> {{this}} <br>
+				{{/ifObject}}
+			{{/compare}}
+		{{/each}}
+	</div>
+</div>
