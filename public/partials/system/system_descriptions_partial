@@ -8,7 +8,6 @@
         <ul class="types-list-content--bullet">
             {{#each Descriptions}}
               {{#equal @../key 'Actions'}}
-              
                 {{#> systemActionPartial this}}
                   <div class="text-center">Action partial suppose to go here.</div>
                 {{/ systemActionPartial}}
@@ -18,6 +17,12 @@
                 {{#> systemFeatsPartial this}}
                   <div class="text-center">Feats partial suppose to go here.</div>
                 {{/ systemFeatsPartial}}
+              {{/equal}}
+
+              {{#equal @../key 'Equipment'}}
+                {{#> systemEquipmentPartial this}}
+                  <div class="text-center">Equipment partial suppose to go here.</div>
+                {{/systemEquipmentPartial}}
               {{/equal}}
 
             {{/each}}

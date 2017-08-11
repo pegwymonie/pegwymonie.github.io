@@ -69,6 +69,8 @@ System:
           - Modify Initiative
           - Aid Other
           - Ready Action
+  Equipment:
+    Description: Equipment enhances your characters abilities, and allows them to perform better at the actions the equipment is designed to support.
   Time Resolution:
     Combat:
       Description: Combat is segregated into individual rounds. Each round characters may make as many actions as the action point pool allows them. Initiative determines who acts first in a round. Each character makes a free initiative roll, unless surprised, and reports their level of success. This determines their place in the turn order, ties are won by the lower roller.
