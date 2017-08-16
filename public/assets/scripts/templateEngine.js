@@ -130,9 +130,11 @@ window.onload = function () {
   let simpleActionData  = YAML.load( DATA_DIR + '/SimpleActions.yaml' + cacheBuster);
   let featData          = YAML.load( DATA_DIR + '/Feats.yaml' + cacheBuster);
   let weaponData        = YAML.load( DATA_DIR + '/Weapons.yaml' + cacheBuster);
+  let armorData         = YAML.load( DATA_DIR + '/Armor.yaml' + cacheBuster);
 
 
-  var data = deepmerge.all([characterData, systemData, actionData, simpleActionData, featData, weaponData]);
+
+  var data = deepmerge.all([characterData, systemData, actionData, simpleActionData, featData, weaponData, armorData]);
   //console.log(Handlebars.partials);
   console.log(data);
   //console.log(Handlebars.partials)

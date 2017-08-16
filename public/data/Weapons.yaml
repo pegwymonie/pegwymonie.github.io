@@ -1,148 +1,238 @@
 System:
   Equipment:
-    Descriptions:
-      Sword:
-        Difficulty: 2
-        Damage: 1d6
-        Uses: 1 Hand
-        Bonus:
-          2E: + 1 Damage
-        Modifications:
-          Quality: 
-            Poor: Difficulty -> +1
-            Good: Difficulty -> -1
-            Excelent:
-              - Difficulty -> -2
-              - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
-          Type:
-            Dagger:
-              - Damage -> d4
-              - Difficulty -> -1
-              - Hide Action/Physcial(Quick) -> Difficulty -> -4
-            Throwing:
-              - Damage -> d4
-              - Difficulty -> -1
-              - Range Increment -> 4
-            Short:
-              - Difficulty -> -1
-              - Special -> Parry -> Difficulty -> +2
-            Long: Default
-            Bastard:
-              - Uses -> 2 Hands
-              - Difficulty -> +1
-              - Damage -> d8
-            Arming:
-              - Difficulty -> +1
-              - Special -> Parry -> Difficulty -> -2
-            Great:
-              - Uses -> 2 Hands
-              - Difficulty -> +2
-              - Damage -> 1d10
-            Claymore:
-              - Uses -> 2 Hands
-              - Requires -> 4 Physcial
-              - Difficulty -> +3
-              - Damage -> 1d12
-      Polearm:
-        Difficulty: 2
-        Damage: 2d4
-        Uses: 2 Hands
-        Special: No Difficulty vs mounted or charging targets
-        Bonus:
-          2E: + 1 Damage
-        Modifications:
-          Quality:
-            Poor: Difficulty -> +1
-            Good: Difficulty -> -1
-            Excelent:
-              - Difficulty -> -2
-              - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
-          Type:
-            Short Spear:
-              - Difficulty -> -1
-              - Damage 1d6
-              - No Special
-            Long Spear: Default
-            Halberd:
-              - Difficulty -> +1
-              - Damage -> 2d6
-              - Special -> +You may setup for a charge. Treat this as a Ready Action / Melee Attack, when resolved it cannot be opposed, nor can it fail(It always deals at least weapon damage).
-            Guandao:
-              - Difficulty -> +2
-              - Parry -> Difficulty -> -4
-              - Disarm -> Difficulty -> -4
-              - Fient -> Difficulty -> -4
-            Naginata:
-              - Difficulty -> +1
-              - Parry -> Difficulty -> -4
-      Axe:
-        Difficulty: 2
-        Damage: 1d6
-        Uses: 1 Hand
-        Bonus:
-          2E: + 1 Damage
-          5+: Special -> +If blocked, deals weapon damage to the item used. See Sunder.
-        Modifications:
-          Quality:
-            Poor: Difficulty -> +1
-            Good: Difficulty -> -1
-            Excelent:
-              - Difficulty -> -2
-              - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
-          Types:
-            Throwing:
-              - Damage -> d4
-              - Special -> +Throwable
-              - Range Increment -> 4
-            Hand: 
-              - Difficulty -> -1
-              - Damage -> d4
-            Battle Axe:
-              - Difficulty -> +2
-              - Damage -> 1d8
-              - Special -> +Opponent armor bonuses are halved. 
-              - Special -> +If blocked, deals 1d8 damage to the item used. See Sunder. (This stacks with the bonus)
-            Great Battle Axe:
-              - Uses -> 2 Hands
-              - Difficulty -> +4
-              - Damage -> 1d12
-              - Special -> +Opponent gains no bonuses from armor
-              - Special -> +If blocked, deals 2d12 damage to the item used. See Sunder. (This stacks with the bonus)
-      Mace:
-        Difficulty: 2
-        Damage: 1d6
-        Uses: 1 Hand
-        Special: Bludgeon
-        Bonus:
-          1E: + 1 Damage (NonLeathal)
-        Modifications:
-          Quality:
-            Poor: Difficulty -> +1
-            Good: Difficulty -> -1
-            Excelent:
-              - Difficulty -> -2
-              - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
-          Types:
-            Club:
-              - Difficulty -> -1
-              - Damage -> d4
-            BlackJack:
-              - Damage -> d8 (NonLeathal)
-            Morningstar:
-              - Difficulty -> +1
-              - Damage -> d6
-              - Special -> +Opponent armor bonuses are halved
-            Flanged:
-              - Uses -> 2 Hands
-              - Difficulty -> +2
-              - Damage -> d8
-              - Special -> +Opponent gains no bonuses from armor
-      Sickle:
-        Difficulty: 2
-        Damage: 1d6
-        Uses: 1 Hand
-        Special: Trip -> Difficulty -4
-        Bonus:
-          2E: + 1 Damage
-          5+: You may make a free trip attempt
-      
+    Weapons:
+      Notations:
+        Difficulty: Penalty to using this item in an action
+        Damage: Base damage dealt on success
+        Uses: What it occupies. You must have these free to wield the item.
+        Modifications: Things that can be applied to create "custom" weapons. 
+        ModificationNotation:
+          SubType: Grouping of modifications. In general you may only have one from each category.
+          GeneralNotation: -> Is used to indicate a sub item.
+            IE1: Difficulty -> -1 (Reduce the difficulty by one)
+            IE2: Special -> +Something (Add an aditional special)
+            IE3: Special -> -Something (Remove an exsting special)
+            IE4: Damage -> d6 (Damage becomes a d6)
+            IE5: Parry -> Difficulty -> +2 (The difficulty of parry increases by 2)
+            IE6: Fient -> Difficulty -> -4 (The difficulty of fient decreases by 4)
+        Bonus: 'What happens when you succeed by more than zero.'
+        BonusNotations:
+          XE: 'Something aditional for every X you succeed by'
+          X+: 'Something aditional if you succed by at least X'
+          X-Y: 'Something aditional if your succeses falls between x and y'
+          '<ActionName>': 'Something aditional if this action was performed directly before this action.'
+      Descriptions:
+        Sword:
+          Difficulty: 2
+          Damage: 1d6
+          Uses: 1 Hand
+          Bonus:
+            2E: + 1 Damage
+          Modifications:
+            Quality: 
+              Poor: Difficulty -> +1
+              Good: Difficulty -> -1
+              Excelent:
+                - Difficulty -> -2
+                - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
+            Type:
+              Dagger:
+                - Damage -> d4
+                - Difficulty -> -1
+                - Hide Action -> Physcial(Quick) -> Difficulty -> -4
+              Throwing:
+                - Damage -> d4
+                - Difficulty -> -1
+                - Range -> 4
+              Short:
+                - Difficulty -> -1
+                - Parry -> Difficulty -> +2
+              Long: Default
+              Bastard:
+                - Uses -> 2 Hands
+                - Difficulty -> +1
+                - Damage -> d8
+              Arming:
+                - Difficulty -> +1
+                - Parry -> Difficulty -> -2
+              Great:
+                - Uses -> 2 Hands
+                - Difficulty -> +2
+                - Damage -> 1d10
+              Claymore:
+                - Uses -> 2 Hands
+                - Requires -> 4 Physcial
+                - Difficulty -> +3
+                - Damage -> 1d12
+        Polearm:
+          Difficulty: 2
+          Damage: 2d4
+          Uses: 2 Hands
+          Special: No Difficulty vs mounted or charging targets
+          Bonus:
+            2E: + 1 Damage
+          Modifications:
+            Quality:
+              Poor: Difficulty -> +1
+              Good: Difficulty -> -1
+              Excelent:
+                - Difficulty -> -2
+                - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
+            Type:
+              Short Spear:
+                - Difficulty -> -1
+                - Damage 1d6
+                - No Special
+              Long Spear: Default
+              Halberd:
+                - Difficulty -> +1
+                - Damage -> 2d6
+                - Special -> +You may setup for a charge. Treat this as a Ready Action / Melee Attack, when resolved it cannot be opposed, nor can it fail(It always deals at least weapon damage).
+              Guandao:
+                - Difficulty -> +2
+                - Parry -> Difficulty -> -4
+                - Disarm -> Difficulty -> -4
+                - Fient -> Difficulty -> -4
+              Naginata:
+                - Difficulty -> +1
+                - Parry -> Difficulty -> -4
+        Axe:
+          Difficulty: 2
+          Damage: 1d6
+          Uses: 1 Hand
+          Bonus:
+            2E: + 1 Damage
+            5+: Special -> +If blocked, deals weapon damage to the item used. See Sunder.
+          Modifications:
+            Quality:
+              Poor: Difficulty -> +1
+              Good: Difficulty -> -1
+              Excelent:
+                - Difficulty -> -2
+                - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
+            Types:
+              Throwing:
+                - Damage -> d4
+                - Special -> +Throwable
+                - Range -> 4
+              Hand: 
+                - Difficulty -> -1
+                - Damage -> d4
+              Battle Axe:
+                - Difficulty -> +2
+                - Damage -> 1d8
+                - Special -> +Opponent armor bonuses are halved. 
+                - Special -> +If blocked, deals 1d8 damage to the item used. See Sunder. (This stacks with the bonus)
+              Great Battle Axe:
+                - Uses -> 2 Hands
+                - Difficulty -> +4
+                - Damage -> 1d12
+                - Special -> +Opponent gains no bonuses from armor
+                - Special -> +If blocked, deals 2d12 damage to the item used. See Sunder. (This stacks with the bonus)
+        Mace:
+          Difficulty: 2
+          Damage: 1d6
+          Uses: 1 Hand
+          Special: Bludgeon
+          Bonus:
+            1E: + 1 Damage (NonLeathal)
+          Modifications:
+            Quality:
+              Poor: Difficulty -> +1
+              Good: Difficulty -> -1
+              Excelent:
+                - Difficulty -> -2
+                - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
+            Types:
+              Club:
+                - Difficulty -> -1
+                - Damage -> d4
+              BlackJack:
+                - Damage -> d8 (NonLeathal)
+              Morningstar:
+                - Difficulty -> +1
+                - Damage -> d6
+                - Special -> +Opponent armor bonuses are halved
+              Flangeqd:
+                - Uses -> 2 Hands
+                - Difficulty -> +2
+                - Damage -> d8
+                - Special -> +Opponent gains no bonuses from armor
+        Sickle:
+          Difficulty: 2
+          Damage: 1d6
+          Uses: 1 Hand
+          Special: Trip -> Difficulty -4
+          Bonus:
+            2E: + 1 Damage
+            5+: You may make a free trip attempt
+          Modifications:
+            Quality:
+              Poor: Difficulty -> +1
+              Good: Difficulty -> -1
+              Excelent:
+                - Difficulty -> -2
+                - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
+        Bow:
+          Difficulty: 2
+          Damage: 1d6
+          Uses: 2 Hands
+          Range: 12
+          Reload: Free Action
+          Capacity: 1
+          Bonus:
+            2E: + 1 Damage
+          Modifications:
+            Quality:
+              Poor: Difficulty -> +1
+              Good: Difficulty -> -1
+              Excelent:
+                - Difficulty -> -2
+                - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
+            Types:
+              Short:
+                - Difficulty -> -1
+                - Range -> 8
+              Long: Default
+              Great:
+                - Difficulty -> +1
+                - Damage -> 1d8
+              Yumi:
+                - Difficulty -> +1
+                - Damage -> 1d8
+                - Special -> +Can be used on horseback with out penalty
+                - Special -> +Difficulty reduced to zero when fired from a knealing position.
+              English:
+                - Difficulty -> +2
+                - Damage -> 1d10
+                - Range 16
+        Crossbow:
+          Difficulty: 1
+          Damage: 1d6
+          Uses: 2 Hands
+          Range: 10
+          Reload: 1 Action
+          Capacity: 1
+          Special: Opponent armor bonuses are halved
+          Modifications:
+            Quality:
+              Poor: Difficulty -> +1
+              Good: Difficulty -> -1
+              Excelent:
+                - Difficulty -> -2
+                - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
+            Types:
+              Hand:
+                - Damage -> 1d4
+                - Uses -> 1 Hand
+              Heavy:
+                - Difficulty -> +1
+                - Damage -> d8
+              Seige:
+                - Difficulty -> +3
+                - Damage -> d10
+                - Special -> +Opponent gains no bonuses from armor
+              Chu-ko-nu:
+                - Difficulty -> +2
+                - Capacity -> 6
+                - Special -> -Opponent armor bonuses are halved
