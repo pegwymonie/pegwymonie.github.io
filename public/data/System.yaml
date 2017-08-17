@@ -72,13 +72,33 @@ System:
   Equipment:
     Description: Equipment enhances your characters abilities, and allows them to perform better at the actions the equipment is designed to support.
   Time Resolution:
-    Combat:
-      Description: Combat is segregated into individual rounds. Each round characters may make as many actions as the action point pool allows them. Initiative determines who acts first in a round. Each character makes a free initiative roll, unless surprised, and reports their level of success. This determines their place in the turn order, ties are won by the lower roller.
+    Rounds:
+      Description: Each round characters may make as many actions as the action point pool allows them. Initiative determines who acts first in a round. Each character makes a free initiative roll, unless surprised, and reports their level of success. This determines their place in the turn order, ties are won by the lower roller.
       Action Points: Actions points are used to denote how much a character can do in any one round. Each action costs a number of points which must all be spent before the action occurs. In general each characters action point pool refils at the top of the round. As a rule of thumb,  action point is to be spent every time the dice are rolled, feats can modify this.
     Free Play:
       Description: When there is no need for the regimented order of combat there is free play. For Roleplay focused games this will be the general mode of play. In this mode actions are resolved as they are announced, with no general order or limit to the amount of actions. When a conflic in ordering does arise the GM may determine who's action takes precidence, prefering those with a higher initative.
   Action Resolution:
     Description: Actions are typicaly resolved with a dice roll, 2d8 for most actions. When rolling lower numbers arr better, with snake eyes(Double Ones) being the best possible result. When resolving an action you must meet or roll under your threshold for the action to be successful. If your roll is under your threshold, the performed action might perform better than expected. This difference is refered to as degrees of success, it denotes how well you accomplished a task.
-    Opposed Actions: The defender resolves their action; if successful, it applies a penatly of two plus the degrees of success to the orignal action. A failed opposed action does not provide a bonus to the attacker. Resolve the rest of the action as below.
+    Opposed Actions: The defender resolves their action; if successful, it applies a penatly of 2 plus the degrees of success to the orignal action. A failed opposed action does not provide a bonus to the attacker. Resolve the rest of the action as below.
     Unopposed Actions: Determine your overall threshold of success ofr the action, include all negative and positve factors as well as any external factors. Postive factors raise your threshold, negative one reduce it. The starting threshold for any action is 2.
     Threshold Calculation Example: 2 + Postive Factors(Attrbiute + Skill) - Negative Factors(Action Difficulty, Defender Penalty)
+  Combat:
+    Description: Combat occurs when two parties come into conflict, with any kind of action. Generally combat is resolved used the rounds time resolution, but may use free play if the GM wishes to. (Free play tends to be quicker, but can leave some players out). Combat ends when the conflict is resolved. 
+    Attacking: 
+      Description: When attacking the attacker choses what action to use to attack, the avalible actions are determined by their skills and equipment.
+      Steps:
+        - Attacker announces the attack.
+        - Attacker chooses the feats being used with the attack.
+        - Attacker chooses the target(s)
+        - Each defender determines if they will oppose, if able.
+        - Action is resolved as per Action Resolution. 
+    Opposing:
+      Description: When someone uses any action(with exceptions) you may attempt to oppose it. In general opposing an action is resolved as follows.
+      Cost: 1 Action Point
+      Steps:
+        - Actions is announced
+        - Feats are chosen
+        - Targets are chosen
+        - Opposition is announced
+        - Action is resolved as per Action Resolution. If you are not a target of the action, you take a 2 penatly to your oppose action.
+    
