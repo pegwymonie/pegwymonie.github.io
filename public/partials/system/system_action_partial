@@ -13,7 +13,7 @@
         {{#unless @first}}
           <div class="row subActions-items">
             {{#each .}}
-              <div class="col-md-10 subActions-item">
+              <div class="col-md-10 subActions-item {{#replace @key }}{{/replace}}-link">
                   <div class="row subActions-item--heading">
                       <div class="col-md-6 subActions-item--heading-title">
                           {{@key}}

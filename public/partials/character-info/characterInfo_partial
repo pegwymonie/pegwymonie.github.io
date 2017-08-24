@@ -1,16 +1,14 @@
-<div id="character-info" class="section">
+<div id="Characters" class="section tab-pane active">
   <h1 class="section-title">
-    <a class="collapse--a" data-toggle="collapse" href="#collapseCharacter">
-      Character Information
-    </a>
+    Character Information
   </h1>
-  <div id="collapseCharacter" class="collapse in">
+  <div id="Characters-body">
     {{#each Characters as |character c|}}
-    <div class="section--panel panel panel-primary">
-      <div class="section--panel-heading panel-heading {{@key}}-title">
-        <a class="collapse--a" data-toggle="collapse" href="#collapseCharacter-{{@key}}">{{@key}}</a>
+    <div id="Characters-{{#replace @key }}{{/replace}}" class="section--panel panel panel-primary">
+      <div class="section--panel-heading panel-heading {{#replace @key }}{{/replace}}-title">
+        {{@key}}
       </div>
-      <div id="collapseCharacter-{{@key}}" class="collapse section--panel-body panel-body  {{@key}}-content">
+      <div class="section--panel-body panel-body {{#replace @key }}{{/replace}}-content">
       {{#each .}} 
         {{#equal @key 'Description'}}
           <p class="section-desc">{{this}}</p>

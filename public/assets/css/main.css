@@ -6,7 +6,13 @@ hr {
 	border-color: #337ab7 !important;
 }
 
-#target {
+#target {}
+
+// #target h1 {
+// 	margin-top: 0 !important;
+// }
+
+#main-content {
 	width: 75%;
 	margin: 0 auto;
 }
@@ -15,6 +21,8 @@ hr {
 	margin: 20px;
 	background-color: white;
 	padding-bottom: 20px;
+	// border: 1px solid #235580;
+	// border-radius: 3px;
 }
 
 .section-title {
@@ -23,22 +31,15 @@ hr {
 	border-color: #235580;
 	text-align: center;
 	padding: 10px 15px;
-	border-radius: 3px;
 }
 
-.collapse--a, 
-.collapse--a:link,
-.collapse--a:hover, 
-.collapse--a:visited,
-.collapse--a:active {
+.toc-heading a {
 	color: white !important;
 	text-decoration: none !important;
 }
 
-h3[class$="descriptions-title"] .collapse--a,
-h3[class^="characterInfo-advancement-title-"] .collapse--a,
-h3[class$="notations-title"] .collapse--a {
-	color: black !important;
+.toc-heading.active a[data-toggle="tab"] {
+	color: #337af0 !important;
 }
 
 .section--panel {
@@ -75,9 +76,7 @@ h3[class$="notations-title"] .collapse--a {
 
 .Derived-Attributes-content .types-list .row .types-list-item,
 .Skills-content .types-list .row .types-list-item {
-		padding: 0px;
-	// margin-right: 1px;
-	// min-height: 103px;
+	padding: 0px;
 } 
 
 .Derived-Attributes-content .types-list-item, 
@@ -85,6 +84,10 @@ h3[class$="notations-title"] .collapse--a {
 		border-right: 1px solid black;
 		border-bottom: 1px solid black;
 		border-top: 1px solid black;
+}
+
+.Derived-Attributes-content .types-list-item {
+	min-height: 103px;
 }
 
 .Derived-Attributes-content .types-list-item:first-of-type,
@@ -247,20 +250,23 @@ div[class$="-system-Equipment-title"],
 	background-color: white;
 }
 
-.side-bar.right {
-	position:absolute;
-  right:0; top:20px; bottom: 20px;
+.sidebar {
+	float: left;
+	position: -webkit-sticky;
+	position: sticky;
+  top:20px;
 }
 
-.side-bar.left {
-	position:absolute;
-  left:0; top:20px; bottom: 20px;
-}
-
-.side-bar {
+.sidebar {
 	width:12.5%;
 	background: #235580;
 	color: white;
 	padding: 15px;
 	border-radius: 3px;
+}
+
+.panel-body:before,
+.panel-body:after {
+	display: inline-block;
+	content: "";
 }
