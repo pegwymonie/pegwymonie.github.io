@@ -5,10 +5,11 @@
 	<div id="table-of-contents-body">
 		<ul class="">
 			{{#each .}}
-			<li class="toc-heading"><b>{{@key}}</b>
-				<ul class="">
+			<li id="{{@key}}-tab-link" class="toc-heading {{#if @first}}active{{/if}}"><b>
+				<a data-toggle="tab" href="#{{@key}}">{{@key}}</a></b>
+				<ul class="toc-sub-heading">
 					{{#each  .}}
-						<li>{{@key}}</li>
+						<li><a href="#{{@../key}}-{{#replace @key }}{{/replace}}">{{@key}}</a></li>
 					{{/each}}
 				</ul>
 			</li>
@@ -16,5 +17,3 @@
 		</ul>
 	</div>
 </div>
-
-<div class="text-center"><h3><b>WIP</b></h3></div>

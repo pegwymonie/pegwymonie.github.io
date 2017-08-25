@@ -1,6 +1,7 @@
 <!-- Imported assets -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.3.0/yaml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/1.1.4/stickyfill.min.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -18,19 +19,22 @@
 <link rel="shortcut icon" href="./public/assets/images/favicon.ico" type="image/icon" >
 
 <script id="template" type="text/x-handlebars-template">
-    {{#> characterPartial}}
-      <div class="text-center">Character Info is supposed to go here.</div>
-    {{/ characterPartial}}
+    
+    <div id="table-of-contents" class="sidebar">
+      {{#> tableOfContentsPartial}}
+          <div class="text-center">tableOfContentsPartial is supposed to go here.</div>
+      {{/tableOfContentsPartial}}
+    </div>
 
-    {{#> systemPartial}}
-      <div class="text-center">System Info, Actions is supposed to go here.</div>
-    {{/ systemPartial}}
+    <div id="main-content" class="tab-content">
+      {{#> characterPartial}}
+        <div class="text-center">Character Info is supposed to go here.</div>
+      {{/ characterPartial}}
 
-<div id="table-of-contents" class="side-bar left">
-  {{#> tableOfContentsPartial}}
-      <div class="text-center">tableOfContentsPartial is supposed to go here.</div>
-  {{/tableOfContentsPartial}}
-</div>
+      {{#> systemPartial}}
+        <div class="text-center">System Info, Actions is supposed to go here.</div>
+      {{/ systemPartial}}
+    </div>
 
 </script>
 

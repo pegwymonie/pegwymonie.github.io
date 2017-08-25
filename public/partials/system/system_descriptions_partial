@@ -1,10 +1,8 @@
-<div class="{{@key}}-descriptions">
-    <h3 class="{{@key}}-descriptions-title">
-        <a data-toggle="collapse" class="collapse--a" href="#collapseSystem-{{@key}}-Descriptions">
-            Descriptions
-        </a>
+<div class="System-{{#replace @key }}{{/replace}}-descriptions">
+    <h3 class="System-{{#replace @key }}{{/replace}}-descriptions-title">
+      Descriptions
     </h3>
-    <div id="collapseSystem-{{@key}}-Descriptions" class="collapse">
+    <div id="System-{{#replace @key }}{{/replace}}-body">
         <ul class="types-list-content--bullet">
             {{#each Descriptions}}
               {{#equal @../key 'Actions'}}
