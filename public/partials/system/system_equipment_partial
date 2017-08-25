@@ -1,48 +1,88 @@
-<div id="system-wrapper-{{@../../key}}-{{@key}}">
-	<div class="row {{@key}}-system-{{@../../key}}-title">
-		<div class="col-md-6">
-        <b>{{@key}}</b>
-    </div>
-    <div class="col-md-6 Equipment-heading-right">
-      <span>Difficulty:</span> {{[Difficulty]}}
-	  </div>
-	</div>
-	<div class="system-{{@../../key}}-{{@key}}-body">
-		{{#each .}}
-			{{#compare @key 'Difficulty' operator='!='}}
-				{{#ifObject .}}
-					<b>{{@key}}:</b> 
+<div id="System-Equipment">
+	{{#each .}}
+		{{#compare @key "Description" operator="!="}}
+			<div id="System-Equipment-title-{{@key}}">{{@key}}</div>
+			<div id="System-Equipment-body-{{@key}}">
+				<div id="System-Equipment-Notations">
+					<span><b>Notations:</b></span>
 					<ul>
-						{{#each .}}
-						<li>
-							<b>{{@key}}:</b> 
-							{{#ifObject .}}
-								<ul>
-									{{#each .}}
-									<li>
-										<b>{{@key}}:</b> 
-										{{#ifArray .}}
-											<ul>
-												{{#each .}}
-													<li>{{this}}</li>
-												{{/each}}
-											</ul>
-										{{else}}
-											{{this}}
-										{{/ifArray}}
-									</li>
-									{{/each}}
-								</ul>
-							{{else}}
-								{{this}}
-							{{/ifObject}}
-						</li>
+						{{#each Notations}}
+							<li>
+								{{#ifObject .}}
+									<span><b>{{@key}}:&nbsp;</b></span>
+									<ul>
+										{{#each .}}
+											<li>
+												{{#ifObject .}}
+													<span><b>{{@key}}:&nbsp;</b></span>
+													<ul>
+														{{#each .}}
+															<li><span><b>{{@key}}:&nbsp;</b></span>{{this}}</li>
+														{{/each}}
+													</ul>
+												{{else}}
+													{{this}}
+												{{/ifObject}}
+											</li>
+										{{/each}}
+									</ul>
+								{{else}}
+									<span><b>{{@key}}:&nbsp;</b></span>{{this}}
+								{{/ifObject}}
+							</li>
 						{{/each}}
 					</ul>
-				{{else}}	
-					<b>{{@key}}:</b> {{this}} <br>
-				{{/ifObject}}
-			{{/compare}}
-		{{/each}}
-	</div>
+				</div>
+				<div id="System-Equipment-Descriptions">
+					<span><b>Descriptions:</b></span>
+					<ul>
+						{{#each Descriptions}}
+							<li>
+								{{#ifObject .}}
+									<span><b>{{@key}}:&nbsp;</b></span>
+									<ul>
+										{{#each .}}
+											<li>
+												<span><b>{{@key}}:&nbsp;</b></span>
+												{{#ifObject .}}
+													<ul>
+														{{#each .}}
+															<span><b>{{@key}}:&nbsp;</b></span>
+												{{#ifObject .}}
+													<ul>
+														{{#each .}}
+															<li><span><b>{{@key}}:&nbsp;</b></span>
+															{{#ifArray .}}
+																<ul>
+																	{{#each .}}
+																		<li>{{this}}</li>
+																	{{/each}}
+																</ul>
+															{{else}}
+																{{this}}
+															{{/ifArray}}
+															</li>
+														{{/each}}
+													</ul>
+												{{else}}
+													{{this}}
+												{{/ifObject}}
+														{{/each}}
+													</ul>
+												{{else}}
+													{{this}}
+												{{/ifObject}}
+											</li>
+										{{/each}}
+									</ul>
+								{{else}}
+									<span><b>{{@key}}:&nbsp;</b></span>{{this}}
+								{{/ifObject}}
+							</li>
+						{{/each}}
+					</ul>
+				</div>
+			</div>
+		{{/compare}}
+	{{/each}}
 </div>

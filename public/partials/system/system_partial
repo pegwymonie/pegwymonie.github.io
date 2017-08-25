@@ -12,6 +12,37 @@
             <div class="section--panel-body panel-body">
                 {{#if Description}}<p class="section-desc">{{Description}}</p>{{/if }}
                 
+                {{#compare @index 1 operator="=="}}<hr>{{/compare}}
+                {{#compare @key "Actions" operator="=="}}<hr>{{/compare}}
+                
+                <!-- Action Resolution -->
+                {{#compare @key "Action Resolution" operator="==" }}
+                    {{#> actionResolutionPartial this}}
+                        <span>actionResolution</span>
+                    {{/ actionResolutionPartial}}
+                {{/compare}}
+
+                <!-- Combat -->
+                {{#compare @key "Combat" operator="==" }}
+                    {{#> combatPartial this}}
+                        <span>combatPartial</span>
+                    {{/ combatPartial}}
+                {{/compare}}
+
+                <!-- Combat -->
+                {{#compare @key "Time Resolution" operator="==" }}
+                    {{#> timeResolutionPartial this}}
+                        <span>timeResolutionPartial</span>
+                    {{/ timeResolutionPartial}}
+                {{/compare}}
+
+                <!-- Equipment -->
+                {{#compare @key "Equipment" operator="==" }}
+                    {{#> systemEquipmentPartial this}}
+                      <div class="text-center">Equipment partial suppose to go here.</div>
+                    {{/systemEquipmentPartial}}
+                {{/compare}}
+                
                 <!-- Types -->
                 {{#if Types}} {{#> systemActionTypesPartial this}}{{/ systemActionTypesPartial}} {{/if }}
                 

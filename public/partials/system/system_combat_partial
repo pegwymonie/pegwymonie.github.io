@@ -1,0 +1,31 @@
+<hr>
+<div id="System-Combat-Attacking">
+	<div id="System-Combat-Attacking-title">Attacking: </div>
+	<div class="System-Combat-Attacking-body">
+		{{Attacking.Description}}
+		<div id="System-Combat-Attacking-Steps">
+			<b>Steps: </b>
+			<ol>
+				{{#each Attacking.Steps}}
+					<li><span>{{this}}</span></li>
+				{{/each}}
+			</ol>
+		</div>
+	</div>
+</div>
+
+<div id="System-Combat-Opposing">
+	<div id="System-Combat-Opposing-title">Opposing: </div>
+	<div class="System-Combat-Opposing-body">
+		{{Opposing.Description}}
+		<div><b>Cost:</b>&nbsp;{{Opposing.Cost}}</div>
+		<div id="System-Combat-Opposing-Steps">
+			<b>Steps: </b>
+			<ol>
+				{{#each Opposing.Steps}}
+					<li><span>{{this}}</span></li>
+				{{/each}}
+			</ol>
+		</div>
+	</div>
+</div>

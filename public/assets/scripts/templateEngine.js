@@ -119,6 +119,9 @@ window.onload = function () {
     getSystemPartial("systemFeatsPartial", "system_feats_partial");
     getSystemPartial("descriptionsTextPartial", "descriptions_text_partial");
     getSystemPartial("systemEquipmentPartial", "system_equipment_partial");
+    getSystemPartial("actionResolutionPartial", "system_action_resolution_partial");
+    getSystemPartial("timeResolutionPartial", "system_time_resolution_partial");
+    getSystemPartial("combatPartial", "system_combat_partial");
 
   var cacheBuster = "?" + Date.now()
 
@@ -137,6 +140,7 @@ window.onload = function () {
   var data = deepmerge.all([characterData, systemData, actionData, simpleActionData, featData, weaponData, armorData]);
   //console.log(Handlebars.partials);
   console.log(data);
+
   //console.log(Handlebars.partials)
 
   //Render the data into the template

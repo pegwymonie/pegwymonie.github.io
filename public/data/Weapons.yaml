@@ -9,6 +9,7 @@ System:
         ModificationNotation:
           SubType: Grouping of modifications. In general you may only have one from each category.
           GeneralNotation: -> Is used to indicate a sub item.
+          Examples:
             IE1: Difficulty -> -1 (Reduce the difficulty by one)
             IE2: Special -> +Something (Add an aditional special)
             IE3: Special -> -Something (Remove an exsting special)

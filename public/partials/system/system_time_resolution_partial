@@ -1,0 +1,10 @@
+<p id="System-Time-Resolution-Opposed-Actions" class="section-desc">
+	<span><b>Free Play: </b></span>&nbsp;{{[Free Play].Description}}
+</p>
+
+<p id="System-Time-Resolution-Rounds" class="section-desc">
+	<span><b>Rounds:</b></span>&nbsp;{{Rounds.Description}}
+	<ul>
+		<li><div><span><b>Action Points:</b></span>&nbsp; {{Rounds.[Action Points]}}</div></li>
+	</ul>
+</p>

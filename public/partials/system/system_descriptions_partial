@@ -17,12 +17,6 @@
                 {{/ systemFeatsPartial}}
               {{/equal}}
 
-              {{#equal @../key 'Equipment'}}
-                {{#> systemEquipmentPartial this}}
-                  <div class="text-center">Equipment partial suppose to go here.</div>
-                {{/systemEquipmentPartial}}
-              {{/equal}}
-
             {{/each}}
         </ul>
     </div>
