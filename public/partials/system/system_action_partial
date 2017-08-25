@@ -2,7 +2,7 @@
     <div class="descriptions-{{@../../key}}-{{@key}}">
         <div class="descriptions-title-{{@../../key}}-{{@key}}"><b>{{@key}}:</b></div>
         <div class="descriptions-body-{{@../../key}}-{{@key}}">
-            {{> descriptionsTextPartial}}
+            {{> descriptionsTextPartial ap="true"}}
         </div>
     </div>
 {{else}}
@@ -23,7 +23,7 @@
                       </div>
                   </div>
                   <div class="subActions-item--body">
-                      {{> descriptionsTextPartial}}
+                      {{> descriptionsTextPartial ap="false"}}
                   </div>
               </div>
             {{/each}}

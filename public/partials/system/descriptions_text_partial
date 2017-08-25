@@ -4,6 +4,14 @@
 </div>
 {{/if}}
 
+{{#compare ap "true" operator="=="}}
+  {{#if [Action Cost] }}
+  <div class="subActions-item-action-points">
+    <span>Action Cost:</span> {{[Action Cost]}}
+  </div>
+  {{/if}}
+{{/compare}}
+ 
 {{#if NoRoll}}
 <div class="subActions-item-noRoll">
     <span>No Roll:</span> {{[NoRoll]}}

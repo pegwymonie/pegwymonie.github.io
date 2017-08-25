@@ -105,11 +105,30 @@ hr {
 div[class^="action-"],
 div[class^="descriptions-title-"],
 .Skills-content .types-list-title,
+#System-Combat-Attacking-title,
+#System-Combat-Opposing-title,
+div[id^="System-Equipment-title-"],
 .Derived-Attributes-content .types-list-title {
 	text-align: center;
 	background-color: #70a1cc;
 	color: black;
 	font-weight: bold;
+}
+
+.System-Combat-Attacking-body,
+div[id^="System-Equipment-body-"],
+.System-Combat-Opposing-body {
+	padding: 5px;
+}
+
+#System-Combat-Attacking-Steps ol,
+#System-Combat-Opposing-Steps ol {
+	font-weight: bold;
+}
+
+#System-Combat-Attacking-Steps li span,
+#System-Combat-Opposing-Steps li span {
+	font-weight: normal;
 }
 
 div[class^="descriptions-title-"] {
@@ -180,7 +199,8 @@ div[class$="-system-Equipment-title"],
 .subActions-item-desc {}
 
 .subActions-item-noRoll span,
-.subActions-item-desc span {
+.subActions-item-desc span,
+.subActions-item-action-points span {
 	font-weight: bold;
 }
 

@@ -1,0 +1,12 @@
+<hr>
+<p id="System-Action-Resolution-Opposed-Actions" class="section-desc">
+	<span><b>Opposed Actions:</b></span>&nbsp;{{[Opposed Actions]}}
+</p>
+
+<p id="System-Action-Resolution-Threshold-Calculation-Example" class="section-desc">
+	<span><b>Threshold Calculation Example:</b></span>&nbsp;{{[Threshold Calculation Example]}}
+</p>
+
+<p id="System-Action-Resolution-Unopposed-Actions" class="section-desc">
+	<span><b>Unopposed Actions:</b></span>&nbsp;{{[Unopposed Actions]}}
+</p>
