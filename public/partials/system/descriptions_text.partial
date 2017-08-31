@@ -3,14 +3,6 @@
     <span>Description:</span> {{Description}}
 </div>
 {{/if}}
-
-{{#compare ap "true" operator="=="}}
-  {{#if [Action Cost] }}
-  <div class="subActions-item-action-points">
-    <span>Action Cost:</span> {{[Action Cost]}}
-  </div>
-  {{/if}}
-{{/compare}}
  
 {{#if NoRoll}}
 <div class="subActions-item-noRoll">
@@ -19,7 +11,7 @@
 {{/if}}
 
 {{#if Special}}
-<div class="subActions-item-special">
+<div class="subActions-item-Special">
     <span>Special:</span> {{[Special]}}
 </div>
 {{/if}}
@@ -66,41 +58,35 @@
 {{/if}}
 
 {{#if Benefits}}
-<div class="feats-benefits">
+<div class="Feats-item-Benefits">
     <span><b>Benefits:</b></span>
     {{#each Benefits}}
-      <ul class="types-list-content--no-bullet">
+      <ul class="types-list-content--bullet">
         <li><b>{{@key}}:</b> {{this}}</li>
       </ul>
     {{/each}}
 </div>
 {{/if}}
 
-{{#if Cost}}
-<div class="feats-cost">
-    <span><b>Cost:</b></span> {{Cost}}
-</div>
-{{/if}}
-
 {{#if Ranks}}
-<div class="feats-ranks">
+<div class="Feats-item-Ranks">
     <span><b>Ranks:</b></span> {{Ranks}}
 </div>
 {{/if}}
 
 {{#if Requirements}}
-<div class="feats-requirements">
+<div class="Feats-item-Requirements">
     <span><b>Requirements:</b></span>
     {{#each Requirements}}
-      <ul class="types-list-content--no-bullet">
+      <ul class="types-list-content--bullet">
         <li><span id="feats-requirements-heading"><b>{{@key}}:</b></span> 
           {{#ifObject this}}
             {{#each .}}
-              <ul class="types-list-content--no-bullet">
+              <ul class="types-list-content--bullet">
                 <li><span id="feats-requirements-subheading"><b>{{@key}}:</b></span> 
                   {{#ifObject this}}
                     {{#each .}}
-                      <ul class="types-list-content--no-bullet">
+                      <ul class="types-list-content--bullet">
                         <li><span id="feats-requirements-item"><b>{{@key}}:</b></span> {{this}}</li>
                       </ul>
                     {{/each}}

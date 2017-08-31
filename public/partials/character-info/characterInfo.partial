@@ -15,6 +15,7 @@
         {{/equal}}
         
         {{#compare @index 1 operator="=="}}<hr>{{/compare}}
+        
         {{#equal @key 'Types'}}
           {{#> typeListPartial this}}
             Type List partial is supposed to go here.

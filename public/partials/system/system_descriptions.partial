@@ -3,8 +3,10 @@
       Descriptions
     </h3>
     <div id="System-{{#replace @key }}{{/replace}}-body">
-        <ul class="types-list-content--bullet">
+        <div class="row types-list-content--bullet">
             {{#each Descriptions}}
+            <div class="System-{{@../key}}-descriptions-body">
+
               {{#equal @../key 'Actions'}}
                 {{#> systemActionPartial this}}
                   <div class="text-center">Action partial suppose to go here.</div>
@@ -16,8 +18,9 @@
                   <div class="text-center">Feats partial suppose to go here.</div>
                 {{/ systemFeatsPartial}}
               {{/equal}}
-
+              
+            </div>
             {{/each}}
-        </ul>
+        </div>
     </div>
 </div>

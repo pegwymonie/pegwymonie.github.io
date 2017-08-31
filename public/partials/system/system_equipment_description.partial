@@ -1,0 +1,40 @@
+<div id="System-Equipment-Descriptions">
+  <h3 class="System-Equipment-descriptions-title">{{@key}} Descriptions</h3>
+  <div class="row">
+    {{#each Descriptions}}
+    {{#tempSave @key this}}{{/tempSave}}
+    <div class="System-Equipment-descriptions-body card-items">
+      {{#unless this.Modifications.Types}}
+        <div class="col-md-4 card Equipment-{{#replace @../key }}{{/replace}}{{#replace @key }}{{/replace}}-link descriptions-Equipment-{{#replace @../key }}{{/replace}}-{{#replace @key}}{{/replace}}">
+        <div class="row card--title">
+          
+          <div class="description-title-Equipment-{{#replace @key}}{{/replace}}">
+            <b>{{@key}}</b>
+          </div>
+
+        </div>
+
+        <div class="card--body">
+          {{#getValue @key "null"}}{{/getValue}}
+        </div>
+      </div>
+      {{/unless}}
+      {{#each this.Modifications.Types}}
+      <div class="col-md-4 card Equipment-{{#replace @../key }}{{/replace}}{{#replace @key }}{{/replace}}-link descriptions-Equipment-{{#replace @../key }}{{/replace}}-{{#replace @key}}{{/replace}}">
+        <div class="row card--title">
+          
+          <div class="description-title-Equipment-{{#replace @key}}{{/replace}}">
+            <b>{{@../key}}:</b> {{@key}}
+          </div>
+
+        </div>
+
+        <div class="card--body">
+          {{#getValue @../key @key}}{{/getValue}}
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{/each}}
+  </div>
+</div>

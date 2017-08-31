@@ -2,7 +2,7 @@ System:
   Equipment:
     Armor:
       Notations:
-        Penatly: Penalty to wearing this armor
+        Penalty: Penalty to wearing this armor
         Reduction: Reduces incomming damage by this amount
         Uses: What it occupies. You must have these free to wear the item.
         Protects: What area's it protects. See Called Shot
@@ -12,13 +12,13 @@ System:
           GeneralNotation: -> Is used to indicate a sub item.
           Examples:
             IE1: Reduction -> -1 (Reduce the reduction by one)
-            IE2: Special -> +Something (Add an aditional special)
+            IE2: Special -> +Something (Add an additional special)
             IE3: Special -> -Something (Remove an exsting special)
             IE4: Penatly -> Adds 1 to Encumbrance (You are considered one level of Encumbrance higher)
             IE5: Oppose -> Free Magic Attack -> Difficulty -> -2 (Reduces the difficulty of opposing a Free Magic Attack)
       Descriptions:
         Chest:
-          Penatly: None
+          Penalty: None
           Reduction: 1
           Uses: Torso
           Protects: Torso
@@ -26,9 +26,9 @@ System:
             Quality: 
               Poor: Reduction -> -1
               Good: Reduction -> +1
-              Excelent:
+              Excellent:
                 - Reduction -> +2
-                - Special -> +Existing Penatly Difficulty improves by one point, if applicable. 
+                - Special -> +Existing Penalty Difficulty improves by one point if applicable. 
             Types:
               Leather: Default
               Studded:
@@ -37,14 +37,14 @@ System:
                 - Reduction -> +2
               Iron: 
                - Reduction -> +3
-               - Penatly -> +1 Difficulty to Stamina Actions
-               - Penatly -> Adds 1 to Encumbrance
+               - Penalty -> +1 Difficulty to Stamina Actions
+               - Penalty -> +Adds 1 to Encumbrance
               Steel:
                 - Reduction -> +4
-                - Penatly -> +1 Difficulty to Stamina Actions
+                - Penalty -> +1 Difficulty to Stamina Actions
               Gethre:
                 - Reduction -> +3
-                - Oppose -> Charter Attack -> Difficulty -> -4
-                - Oppose -> Free Magic Attack -> Difficulty -> -2
+                - Oppose -> +Charter Attack -> Difficulty -> -4
+                - Oppose -> +Free Magic Attack -> Difficulty -> -2
                 - Protects -> +Legs
                 - Protects -> +Arms
