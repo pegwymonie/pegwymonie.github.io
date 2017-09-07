@@ -1,0 +1,45 @@
+<div id="System-Equipment">
+  {{#each .}}
+    {{#compare @key "Description" operator="!="}}
+      <div id="System-Equipment-body-{{@key}}">
+        <div id="System-Equipment-notations">
+          <h3 class="System-Equipment-notations-title">{{@key}} Notations</h3>
+          <div class="System-Equipment-notations-body">
+            <ul>
+            {{#each Notations}}
+              <li>
+                {{#ifObject .}}
+                  <span><b>{{@key}}:&nbsp;</b></span>
+                  <ul>
+                    {{#each .}}
+                      <li>
+                        {{#ifObject .}}
+                          <span><b>{{@key}}:&nbsp;</b></span>
+                          <ul>
+                            {{#each .}}
+                              <li><span><b>{{@key}}:&nbsp;</b></span>{{this}}</li>
+                            {{/each}}
+                          </ul>
+                        {{else}}
+                          {{this}}
+                        {{/ifObject}}
+                      </li>
+                    {{/each}}
+                  </ul>
+                {{else}}
+                  <span><b>{{@key}}:&nbsp;</b></span>{{this}}
+                {{/ifObject}}
+              </li>
+            {{/each}}
+            </ul>
+          </div>
+        </div>
+        {{#> systemEquipmentDescPartial }}
+          <div>
+           Partial should go here 
+          </div>
+        {{/ systemEquipmentDescPartial}}
+      </div>
+    {{/compare}}
+  {{/each}}
+</div>

@@ -1,0 +1,17 @@
+<div class="card-items">
+    <div class="col-md-4 card Actions-{{#replace @key }}{{/replace}}-link descriptions-{{#replace parent}}{{/replace}}-{{#replace @key}}{{/replace}}">
+      <div class="row card--title">
+          <div class="actions-item--heading-title descriptions-title-{{#replace parent}}{{/replace}}-{{#replace @key}}{{/replace}}">
+              {{@key}}
+          </div>
+          {{#if [Action Cost]}}
+            <div class="actions-item--heading-action-cost">
+                <span>Action Cost:</span> {{[Action Cost]}}
+            </div>
+          {{/if}}
+      </div>
+      <div class="card--body">
+          {{> descriptionsTextPartial subAction="false"}}
+      </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+{{#unless SubActions}}
+  <!-- Simple Actions Partial -->
+  {{#> systemActionSimplePartial this parent=@../../key}}
+    <div class="text-center">Simple Actions partial suppose to go here.</div>
+  {{/ systemActionSimplePartial}}
+{{else}}
+  <!-- Complex Actions Partial -->
+  {{#> systemActionComplexPartial this parent=@../../key}}
+    <div class="text-center">Complex Actions partial suppose to go here.</div>
+  {{/ systemActionComplexPartial}}
+{{/unless}}

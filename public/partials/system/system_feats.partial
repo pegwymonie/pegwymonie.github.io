@@ -1,0 +1,19 @@
+<div class="descriptions-{{@../../key}}-{{@key}}">
+  <div class="card-items">
+    <div class="col-md-4 card Feats-{{#replace @key }}{{/replace}}-link descriptions-{{#replace @../../key}}{{/replace}}-{{#replace @key}}{{/replace}}">
+      <div class="row card--title">
+          <div class="feats-item--heading-title descriptions-title-{{#replace @../../key}}{{/replace}}-{{#replace @key}}{{/replace}}">
+              {{@key}}
+          </div>
+          {{#if [Cost]}}
+            <div class="feats-item--heading-action-cost">
+                <span>Cost:</span> {{[Cost]}}
+            </div>
+          {{/if}}
+      </div>
+      <div class="card--body">
+          {{> descriptionsTextPartial subAction="false"}}
+      </div>
+    </div>
+  </div>
+</div>

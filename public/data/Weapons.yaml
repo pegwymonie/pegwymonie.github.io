@@ -33,14 +33,14 @@ System:
             Quality: 
               Poor: Difficulty -> +1
               Good: Difficulty -> -1
-              Excelent:
+              Excellent:
                 - Difficulty -> -2
-                - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
-            Type:
+                - Special -> +Existing Specials Difficulty improves by one point if applicable. 
+            Types:
               Dagger:
                 - Damage -> d4
                 - Difficulty -> -1
-                - Hide Action -> Physcial(Quick) -> Difficulty -> -4
+                - Hide Action -> Physical(Quick) -> Difficulty -> -4
               Throwing:
                 - Damage -> d4
                 - Difficulty -> -1
@@ -62,7 +62,7 @@ System:
                 - Damage -> 1d10
               Claymore:
                 - Uses -> 2 Hands
-                - Requires -> 4 Physcial
+                - Requires -> 4 Physical
                 - Difficulty -> +3
                 - Damage -> 1d12
         Polearm:
@@ -76,19 +76,19 @@ System:
             Quality:
               Poor: Difficulty -> +1
               Good: Difficulty -> -1
-              Excelent:
+              Excellent:
                 - Difficulty -> -2
-                - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
-            Type:
+                - Special -> +Existing Specials Difficulty improves by one point if applicable. 
+            Types:
               Short Spear:
                 - Difficulty -> -1
-                - Damage 1d6
-                - No Special
+                - Damage -> 1d6
+                - Special -> xNo Specials
               Long Spear: Default
               Halberd:
                 - Difficulty -> +1
                 - Damage -> 2d6
-                - Special -> +You may setup for a charge. Treat this as a Ready Action / Melee Attack, when resolved it cannot be opposed, nor can it fail(It always deals at least weapon damage).
+                - Special -> +You may setup for a charge. Treat this as a Ready Action / Melee Attack. When resolved it cannot be opposed nor can it fail(It always deals at least weapon damage).
               Guandao:
                 - Difficulty -> +2
                 - Parry -> Difficulty -> -4
@@ -103,14 +103,14 @@ System:
           Uses: 1 Hand
           Bonus:
             2E: + 1 Damage
-            5+: Special -> +If blocked, deals weapon damage to the item used. See Sunder.
+            5+: Special -> +If blocked deals weapon damage to the item used. See Sunder.
           Modifications:
             Quality:
               Poor: Difficulty -> +1
               Good: Difficulty -> -1
-              Excelent:
+              Excellent:
                 - Difficulty -> -2
-                - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
+                - Special -> +Existing Specials Difficulty improves by one point if applicable. 
             Types:
               Throwing:
                 - Damage -> d4
@@ -123,13 +123,13 @@ System:
                 - Difficulty -> +2
                 - Damage -> 1d8
                 - Special -> +Opponent armor bonuses are halved. 
-                - Special -> +If blocked, deals 1d8 damage to the item used. See Sunder. (This stacks with the bonus)
+                - Special -> +If blocked deals 1d8 damage to the item used. See Sunder. (This stacks with the bonus)
               Great Battle Axe:
                 - Uses -> 2 Hands
                 - Difficulty -> +4
                 - Damage -> 1d12
                 - Special -> +Opponent gains no bonuses from armor
-                - Special -> +If blocked, deals 2d12 damage to the item used. See Sunder. (This stacks with the bonus)
+                - Special -> +If blocked deals 2d12 damage to the item used. See Sunder. (This stacks with the bonus)
         Mace:
           Difficulty: 2
           Damage: 1d6
@@ -141,9 +141,9 @@ System:
             Quality:
               Poor: Difficulty -> +1
               Good: Difficulty -> -1
-              Excelent:
+              Excellent:
                 - Difficulty -> -2
-                - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
+                - Special -> +Existing Specials Difficulty improves by one point if applicable. 
             Types:
               Club:
                 - Difficulty -> -1
@@ -171,9 +171,9 @@ System:
             Quality:
               Poor: Difficulty -> +1
               Good: Difficulty -> -1
-              Excelent:
+              Excellent:
                 - Difficulty -> -2
-                - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
+                - Special -> +Existing Specials Difficulty improves by one point if applicable. 
         Bow:
           Difficulty: 2
           Damage: 1d6
@@ -187,9 +187,9 @@ System:
             Quality:
               Poor: Difficulty -> +1
               Good: Difficulty -> -1
-              Excelent:
+              Excellent:
                 - Difficulty -> -2
-                - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
+                - Special -> +Existing Specials Difficulty improves by one point if applicable. 
             Types:
               Short:
                 - Difficulty -> -1
@@ -206,7 +206,7 @@ System:
               English:
                 - Difficulty -> +2
                 - Damage -> 1d10
-                - Range 16
+                - Range -> 16
         Crossbow:
           Difficulty: 1
           Damage: 1d6
@@ -219,9 +219,9 @@ System:
             Quality:
               Poor: Difficulty -> +1
               Good: Difficulty -> -1
-              Excelent:
+              Excellent:
                 - Difficulty -> -2
-                - Special -> +Existing Specials Difficulty improves by one point, if applicable. 
+                - Special -> +Existing Specials Difficulty improves by one point if applicable. 
             Types:
               Hand:
                 - Damage -> 1d4

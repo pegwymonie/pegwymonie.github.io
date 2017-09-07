@@ -1,0 +1,27 @@
+    <!-- SubActions -->
+    <div class="descriptions-body-{{#replace parent}}{{/replace}}-{{#replace @key}}{{/replace}}">
+      {{#each .}}
+        {{#unless @first}}
+          <div class="card-items">
+            {{#each .}}
+              <div class="col-md-4 card Actions-{{#replace @key }}{{/replace}}-link">
+                  <div class="row card--title">
+                      <div class="actions-item--heading-title">
+                          {{@../../key}} - {{@key}}
+                      </div>
+                      {{#if [Action Cost]}}
+                        <div class="actions-item--heading-action-cost">
+                            <span>Action Cost:</span> {{[Action Cost]}}
+                        </div>
+                      {{/if}}
+                  </div>
+                  <div class="card--body">
+                      {{> descriptionsTextPartial subAction="true"}}
+                  </div>
+              </div>
+            {{/each}}
+          </div>
+        {{/unless}}
+      {{/each}}
+    </div>
+    
